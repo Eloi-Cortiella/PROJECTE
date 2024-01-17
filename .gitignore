@@ -1,2 +1,3 @@
 *.txt
 *.log
+/Auditoria_de_serveis/__pycache__
