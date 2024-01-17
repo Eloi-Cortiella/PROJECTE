@@ -101,7 +101,6 @@ def executar_enum4linux():
             print("[bold red]ERROR ----> Hi ha hagut un problema executant el programa...")
             print("    ",e)
 
-            with open('./errors.log',"w") as a:
+            with open('./errors.log',"a") as a:
                 a.write(str(e))
-
             break

@@ -65,7 +65,7 @@ def lanzar_the_harvester():
         subprocess.call(subprocess_command, shell=True)
     except Exception as e:
         print(f"S'ha produït un error en executar TheHarvester: {e}")
-        with open('./errors.log',"w") as a:
+        with open('./errors.log',"a") as a:
             a.write(str(e))
 
 def get_user_input(prompt, validation_func=None):
