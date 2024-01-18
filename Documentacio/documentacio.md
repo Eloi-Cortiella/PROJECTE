@@ -1,8 +1,32 @@
-# Documentació Projecte MP14
+# Projecte MP14 - GRUP Eloi Cortiella, Èric González, Èric Pérez
 
-## Tasca - TheHarvester
+## ÍNDEX
 
-### Instalació
+1. **Fase de Reconeixement**
+   1.1 [Api Shodan en Python](#api-shodan-en-python)
+   1.2 [The Harvester en Python](#theharvester-en-python)
+   1.3 [Més OSINT](#més-osint)
+
+2. **Auditoria de Serveis**
+   2.1 [Escaneig](#escaneig)
+   2.2 [Auditoria SSH](#auditoria-ssh)
+   2.3 [Enumeració](#enumeració)
+
+3. **Funcionalitats Afegides**
+   3.1 [Bot de Telegram en Python](#bot-de-telegram-amb-python)
+   3.2 [Contenidor de Docker per a Auditories Automatitzades](#contenidor-de-docker-per-a-auditories-automatitzades)
+
+4. [Pla de Millora](#pla-de-millora)
+
+5. [Landing Page](#landing-page)
+
+# Fase de Reconeixement
+
+## Api Shodan en Python
+
+## TheHarvester en Python
+
+### Instal·lació
 
 ### Contingut Script
 
@@ -47,7 +71,7 @@ def lanzar_the_harvester():
 lanzar_the_harvester()'
 ```
 
-## Tasca - Més OSINT
+## Més OSINT
 
 Per aquesta tasca tenim que investigar sobre eines, scripts o altres recursos que ens poden semblar útils i interessants per posar el nostre script de python
 
@@ -101,7 +125,18 @@ ExifTool és una eina de línia de comandes molt potent i versàtil dissenyada p
 - **Funcionament**
 ![funcionament_vulnerabilitats_serveis_escaneig](/Documentacio/img/Selecció_1168.png)
 
-## Tasca - Bot de telegram amb Python
+
+# Auditoria de serveis
+
+## Escaneig
+
+## Auditoria SSH
+
+## Enumeració
+
+# Funcionalitats afegides
+
+## Bot de telegram amb Python
 
 ### Contingut script
 ![bot_telegram_script](/Documentacio/img/Selecció_1170.png)
@@ -111,3 +146,9 @@ ExifTool és una eina de línia de comandes molt potent i versàtil dissenyada p
 - Prova amb una imatge al grup de telegram per si funciona l’enviament desde el bot amb python, i veiem que s’envia correctament
 
 ![proves_bot_telegram](/Documentacio/img/Selecció_1171.png)
+
+## Contenidor de Docker per a Auditories Automatitzades
+
+# Pla de Millora
+
+# Landing Page
