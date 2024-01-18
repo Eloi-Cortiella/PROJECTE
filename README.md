@@ -109,30 +109,38 @@ ExifTool és una eina de línia de comandes molt potent i versàtil dissenyada p
 ## Tasca - Escaneig
 
 - **Menú**
+
 ![menu_script_escaneig](/Documentacio/img/Selecció_1160.png)
 
 - **Descobrir hosts de xarxa.**
+
 ![hosts_xarxa_escaneig](/Documentacio/img/Selecció_1161.png)
 
 - **Funcionament**
+
 ![funcionament_hosts_xarxa_escaneig](/Documentacio/img/Selecció_1162.png)
 
 - **Escaneig de ports oberts**
+
 ![ports_oberts_escaneig](/Documentacio/img/Selecció_1163.png)
 
 - **Funcionament**
+
 ![funcionament_ports_oberts_escaneig](/Documentacio/img/Selecció_1164.png)
 
 - **Llistat de serveis i versions d'un, un rang o tots els ports**
+
 ![serveis_i_versions_escaneig](/Documentacio/img/Selecció_1165.png)
 
 - **Funcionament**
 ![funcionament_serveis_i_versions_escaneig](/Documentacio/img/Selecció_1166.png)
 
 - **Llistat de vulnerabilitats d'un, un rang o tots els serveis**
+
 ![vulnerabilitats_serveis_escaneig](/Documentacio/img/Selecció_1167.png)
 
 - **Funcionament**
+
 ![funcionament_vulnerabilitats_serveis_escaneig](/Documentacio/img/Selecció_1168.png)
 
 
@@ -149,6 +157,7 @@ ExifTool és una eina de línia de comandes molt potent i versàtil dissenyada p
 ## Bot de telegram amb Python
 
 ### Contingut script
+
 ![bot_telegram_script](/Documentacio/img/Selecció_1170.png)
 
 
