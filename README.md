@@ -133,6 +133,7 @@ ExifTool és una eina de línia de comandes molt potent i versàtil dissenyada p
 ![serveis_i_versions_escaneig](/Documentacio/img/Selecció_1165.png)
 
 - **Funcionament**
+
 ![funcionament_serveis_i_versions_escaneig](/Documentacio/img/Selecció_1166.png)
 
 - **Llistat de vulnerabilitats d'un, un rang o tots els serveis**
