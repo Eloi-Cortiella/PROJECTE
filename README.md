@@ -1,6 +1,6 @@
-# PROJECTE MP14
+# PROJECTE ASIX MP14 - 2023/2024
 
-**Projecte del mòdul MP14, format per Èric González, Èric Peréz i Eloi Cortiella.**
+**Projecte ASIX del mòdul MP14, format per Èric González, Èric Peréz i Eloi Cortiella.**
 
 ## ÍNDEX
 
@@ -33,44 +33,7 @@
 ### Contingut Script
 
 ```
-import subprocess
 
-def get_user_input(prompt, validation_func=None):
-    while True:
-        user_input = input(prompt)
-        if validation_func is None or validation_func(user_input):
-            return user_input
-        else:
-            print("Entrada no vàlida. Torna-ho a intentar.")
-def lanzar_the_harvester():
-    objetivo = get_user_input("Introdueix l'objectiu (p. ex., un domini o una adreça IP): ")
-
-    parametres = []
-    while True:
-        parametre = input("Introdueix un paràmetre (p. ex., '-d' o '-l', o '-h' per finalitzar): ")
-        if parametre == "fin":
-            break
-        elif parametre in ("-d", "--domain", "-b", "--source", "-l", "--limit", "-S", "--start", "-p", "--proxies", "-s", "--shodan", "--screenshot", "-v", "--virtual-host", "-e", "--dns-server", "-t", "--take-over", "-r", "--dns-revolve", "-n", "--dns-lookup", "-c", "--dns-brute", "-f", "--filename", ):
-            valor = get_user_input(f"Introdueix el valor per al paràmetre {parametre}: ")
-            parametres.append(f"{parametre} {valor}")
-        else:
-            print("Paràmetre no vàlid. Torna-ho a intentar o utilitza 'fin' per finalitzar.")
-
-    subprocess_command = f"python3 /home/alumne/Escriptori/Moodle_2N/MP_14/theHarvester/theHarvester.py -d {objetivo} {' '.join(parametres)}"
-
-    try:
-        output = subprocess.check_output(subprocess_command, shell=True, text=True)
-        with open("resultats_theharvester.txt", "w") as arxiu:
-            arxiu.write(output)
-        print("Resultats guardats a 'resultats_theharvester.txt'")
-    except Exception as e:
-        print(f"S'ha produït un error en executar TheHarvester: {e}")
-    
-    try:
-        subprocess.call(subprocess_command, shell=True)
-    except Exception as e:
-        print(f"S'ha produït un error en executar TheHarvester: {e}")
-lanzar_the_harvester()'
 ```
 
 ## Més OSINT
