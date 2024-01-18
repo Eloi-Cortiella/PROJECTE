@@ -1,6 +1,11 @@
-# PROJECTE ASIX MP14 - 2023/2024
+<h1 align="center">PROJECTE ASIX MP14 - 2023/2024</h1>
+<p align="center">
+<strong>Projecte ASIX del mòdul MP14, format per Èric González, Èric Peréz i Eloi Cortiella.</strong>
+</p>
 
-**Projecte ASIX del mòdul MP14, format per Èric González, Èric Peréz i Eloi Cortiella.**
+<p align="center">
+<img src="https://img.shields.io/badge/python-%3E=_3.10.12-blue"/>
+</p>
 
 ## ÍNDEX
 
