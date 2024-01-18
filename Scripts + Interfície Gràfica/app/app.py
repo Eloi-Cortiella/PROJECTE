@@ -5,7 +5,7 @@ from tkinter import scrolledtext
 from subprocess import PIPE, Popen
 
 # Ruta completa al script de Sherlock
-SHERLOCK_SCRIPT_PATH = "/home/alumne/Escriptori/PROJECTE/sherlock/sherlock/sherlock.py"
+SHERLOCK_SCRIPT_PATH = "./Escaneig/sherlock/sherlock/sherlock.py"
 
 def run_nmap():
     clear_text()

@@ -75,5 +75,3 @@ def get_user_input(prompt, validation_func=None):
             return user_input
         else:
             print("Entrada no vàlida. Torna-ho a intentar.")
-
-lanzar_the_harvester()

@@ -2,3 +2,4 @@
 *.log
 /Auditoria_de_serveis/__pycache__/
 /Fase_reconeixement/__pycache__/
+/Fase_reconeixement/fonts
