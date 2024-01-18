@@ -149,6 +149,6 @@ ExifTool és una eina de línia de comandes molt potent i versàtil dissenyada p
 
 ## Contenidor de Docker per a Auditories Automatitzades
 
-# Pla de Millora
+## Pla de Millora
 
-# Landing Page
+## Landing Page
