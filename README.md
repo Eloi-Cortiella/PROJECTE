@@ -31,9 +31,9 @@
 
 5. [Landing Page](#landing-page)
 
-## 💡 Introduction
+## 💡 Introduction 💡
 
-# Fase de Reconeixement
+# 📡 Fase de Reconeixement 📡
 
 # Api Shodan en Python
 
@@ -201,9 +201,9 @@ ExifTool és una eina de línia de comandes molt potent i versàtil dissenyada p
 ![Captura_demostracio_mesOSINT_Exitfool_1](/img/Selecció_1158.png)
 ![Captura_demostracio_mesOSINT_Exitfool_2](/img/Selecció_1159.png)
 
-# Auditoria de serveis
+# 💻 Auditoria de serveis 💻
 
-# Escaneig
+# 🔉 Escaneig 🔉
 
 - **Menú**
 
@@ -241,13 +241,13 @@ ExifTool és una eina de línia de comandes molt potent i versàtil dissenyada p
 
 ![funcionament_vulnerabilitats_serveis_escaneig](/img/Selecció_1168.png)
 
-# Auditoria SSH
+# 📊 Auditoria SSH 📊
 
-# Enumeració
+# 📃 Enumeració 📃
 
-# Funcionalitats afegides
+# 📂 Funcionalitats afegides 📂
 
-# Bot de telegram amb Python
+# 🤖 Bot de telegram amb Python 🤖
 
 ### Contingut script
 
@@ -259,14 +259,14 @@ ExifTool és una eina de línia de comandes molt potent i versàtil dissenyada p
 
 ![proves_bot_telegram](/img/Selecció_1171.png)
 
-# Contenidor de Docker per a Auditories Automatitzades
+# 🐳 Contenidor de Docker per a Auditories Automatitzades 🐳
 
 - EN PROCÉS
 
-# Pla de Millora
+# 🔧 Pla de Millora 🔧
 
 - EN PROCÉS
 
-# Landing Page
+# 📄 Landing Page 📄
 
 - EN PROCÉS

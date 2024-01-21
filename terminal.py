@@ -9,7 +9,7 @@ from rich.traceback import install
 
 install()
 
-def mostrar_menu_terminal():
+def menu_terminal():
     # Crear una tabla con Rich
     table = Table(title="Eines disponibles")
     table.add_column("Num", style="bold magenta")
@@ -23,6 +23,7 @@ def mostrar_menu_terminal():
     table.add_row("6", "[black]Escaneig", "Pràctica de revisar una xarxa informàtica per identificar actius, obertures de seguretat o altres elements rellevants, generalment mitjançant eines automatitzades.")
     table.add_row("7", "[cyan]The Harvester", "Eina de recopilació d'informació que permet la cerca i extracció de dades sobre dominis, correus electrònics i altres elements relacionats amb la seguretat informàtica.")
     table.add_row("8", "[brown]Enumeració", "Eina específica per a sistemes basats en Linux que es fa servir per a la enumeració i recopilació d'informació en entorns Windows amb el protocol SMB (Server Message Block).")
+    table.add_row("9","[strong]Sortir","Sortir de l'aplicació")
     
     print(table)
 
@@ -66,8 +67,11 @@ def ejecutar_opcion(opcion):
                 print("Iniciant: Enum4linux")
                 time.sleep(1.5)
                 executar_enum4linux()
+            else:
+                quit()
+
     except Exception as e:
         print(e)
 
 if __name__ == "__main__":
-    mostrar_menu_terminal()
+    menu_terminal()
