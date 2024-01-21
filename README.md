@@ -34,6 +34,7 @@
 ## Api Shodan en Python
 
 ## TheHarvester en Python
+![theHarvester](/img/theHarvester-logo.webp)
 
 TheHarvester és una eina de codi obert dissenyada per recopilar informació de fonts públiques en línia amb l'objectiu de realitzar anàlisis d'intel·ligència i proves de penetració. Desenvolupada en Python, TheHarvester és particularment útil per recopilar informació sobre dominis, subdominis, adreces de correu electrònic, noms d'amfitrions, xarxes i altres detalls relacionats amb una entitat en línia.
 
@@ -58,15 +59,23 @@ Per a la instal·lació de l'eina TheHarvester per tal d'executar el seu script,
 
 1. Primer de tot usarem la comanda ```git clone https://github.com/laramies/theHarvester ``` per clonar el contingut del repositori en una carpeta.
 
-POSAR FOTO DE LA COMANDA
+![Clonar](/img/Selecció_4387.png)
 
 2. A continuació entrem a la carpeta creada amb ```cd theHarvester```
 
-FOTO DE LA COMANDA
+![Entrar_carpeta](/img/Selecció_4388.png)
 
 3. Per últim, realitzarem la instal·lació amb la comanda ```python3 -m pip install -r requirements/base.txt```, la qual instal·larà els requeriments que necessita l'eina TheHarvester
 
+![Instal·lació](/img/Selecció_4389.png)
+
+4. Comprovem que l'instal·lació s'ha realitzat correctament executant l'script que es troba a la carpeta clonada. Farem la comanda ```python3 theHarvester -h```
+
+![Comprovació_TheHarvester](/img/Selecció_4391.png)
+
 ### Contingut Script
+
+Aqui està el script en python que hem creat per a que cridi a l'eina theHarvester i que esculli les opcions necessaries:
 
 ```
 import subprocess
@@ -148,11 +157,13 @@ def get_user_input(prompt, validation_func=None):
             print("Entrada no vàlida. Torna-ho a intentar.")
 ```
 
-POSAR SCRIPT I EXPLICACIÓ DE L'SCRIPT
+### Explicació script
 
-### Comprovacions Script
 
-POSAR VIDEOS CONFORME FUNCIONA
+
+### Execució Script
+
+POSAR GIF CONFORME FUNCIONA L'SCRIPT
 
 ## Més OSINT
 
