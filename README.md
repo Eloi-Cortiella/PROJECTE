@@ -7,7 +7,9 @@
 <img src="https://img.shields.io/badge/python-%3E=_3.10.12-blue"/>
 </p>
 
+<p align="center">
 ![Logo](/img/Logo_empresa.png)
+</p>
 
 ## ÍNDEX
 
