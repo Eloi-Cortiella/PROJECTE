@@ -8,7 +8,7 @@
 </p>
 
 <p align="center">
-![Logo](/img/Logo_empresa.png)
+<img src="/img/Logo_empresa.png">
 </p>
 
 ## ÍNDEX
