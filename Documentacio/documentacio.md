@@ -1,4 +1,11 @@
-# Projecte MP14 - GRUP Eloi Cortiella, Èric González, Èric Pérez
+<h1 align="center">PROJECTE ASIX MP14 - 2023/2024</h1>
+<p align="center">
+<strong>Projecte ASIX del mòdul MP14, format per Èric González, Èric Peréz i Eloi Cortiella.</strong>
+</p>
+
+<p align="center">
+<img src="https://img.shields.io/badge/python-%3E=_3.10.12-blue"/>
+</p>
 
 ## ÍNDEX
 
@@ -31,44 +38,7 @@
 ### Contingut Script
 
 ```
-import subprocess
 
-def get_user_input(prompt, validation_func=None):
-    while True:
-        user_input = input(prompt)
-        if validation_func is None or validation_func(user_input):
-            return user_input
-        else:
-            print("Entrada no vàlida. Torna-ho a intentar.")
-def lanzar_the_harvester():
-    objetivo = get_user_input("Introdueix l'objectiu (p. ex., un domini o una adreça IP): ")
-
-    parametres = []
-    while True:
-        parametre = input("Introdueix un paràmetre (p. ex., '-d' o '-l', o '-h' per finalitzar): ")
-        if parametre == "fin":
-            break
-        elif parametre in ("-d", "--domain", "-b", "--source", "-l", "--limit", "-S", "--start", "-p", "--proxies", "-s", "--shodan", "--screenshot", "-v", "--virtual-host", "-e", "--dns-server", "-t", "--take-over", "-r", "--dns-revolve", "-n", "--dns-lookup", "-c", "--dns-brute", "-f", "--filename", ):
-            valor = get_user_input(f"Introdueix el valor per al paràmetre {parametre}: ")
-            parametres.append(f"{parametre} {valor}")
-        else:
-            print("Paràmetre no vàlid. Torna-ho a intentar o utilitza 'fin' per finalitzar.")
-
-    subprocess_command = f"python3 /home/alumne/Escriptori/Moodle_2N/MP_14/theHarvester/theHarvester.py -d {objetivo} {' '.join(parametres)}"
-
-    try:
-        output = subprocess.check_output(subprocess_command, shell=True, text=True)
-        with open("resultats_theharvester.txt", "w") as arxiu:
-            arxiu.write(output)
-        print("Resultats guardats a 'resultats_theharvester.txt'")
-    except Exception as e:
-        print(f"S'ha produït un error en executar TheHarvester: {e}")
-    
-    try:
-        subprocess.call(subprocess_command, shell=True)
-    except Exception as e:
-        print(f"S'ha produït un error en executar TheHarvester: {e}")
-lanzar_the_harvester()'
 ```
 
 ## Més OSINT
@@ -107,22 +77,39 @@ ExifTool és una eina de línia de comandes molt potent i versàtil dissenyada p
 ## Tasca - Escaneig
 
 - **Menú**
+
 ![menu_script_escaneig](/Documentacio/img/Selecció_1160.png)
+
 - **Descobrir hosts de xarxa.**
+
 ![hosts_xarxa_escaneig](/Documentacio/img/Selecció_1161.png)
+
 - **Funcionament**
+
 ![funcionament_hosts_xarxa_escaneig](/Documentacio/img/Selecció_1162.png)
+
 - **Escaneig de ports oberts**
+
 ![ports_oberts_escaneig](/Documentacio/img/Selecció_1163.png)
+
 - **Funcionament**
+
 ![funcionament_ports_oberts_escaneig](/Documentacio/img/Selecció_1164.png)
+
 - **Llistat de serveis i versions d'un, un rang o tots els ports**
+
 ![serveis_i_versions_escaneig](/Documentacio/img/Selecció_1165.png)
+
 - **Funcionament**
+
 ![funcionament_serveis_i_versions_escaneig](/Documentacio/img/Selecció_1166.png)
+
 - **Llistat de vulnerabilitats d'un, un rang o tots els serveis**
+
 ![vulnerabilitats_serveis_escaneig](/Documentacio/img/Selecció_1167.png)
+
 - **Funcionament**
+
 ![funcionament_vulnerabilitats_serveis_escaneig](/Documentacio/img/Selecció_1168.png)
 
 
@@ -139,6 +126,7 @@ ExifTool és una eina de línia de comandes molt potent i versàtil dissenyada p
 ## Bot de telegram amb Python
 
 ### Contingut script
+
 ![bot_telegram_script](/Documentacio/img/Selecció_1170.png)
 
 

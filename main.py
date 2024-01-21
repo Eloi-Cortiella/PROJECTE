@@ -1,3 +1,4 @@
+from subprocess import PIPE, Popen
 import tkinter as tk
 from tkinter import messagebox
 import time
@@ -9,19 +10,19 @@ from rich.table import Table
 from rich.traceback import install
 install()
 
+subprocess_command = f"/ScriptsINterficieGràfica/app.y"
+
 class AplicacionTkinterRich:
     def __init__(self, master):
         self.master = master
-        master.title("Tkinter con Rich")
-        master.geometry("800x600")  # Tamaño de la ventana principal
+        master.title("PROJECTE ASIX")
+        master.geometry("800x300")  # Tamaño de la ventana principal
 
         self.crear_interfaz()
 
     def crear_interfaz(self):
         # Configurar el esquema de colores
         self.master.configure(bg='#2c3e50')  # Color de fondo de la ventana principal
-        boton_color = '#3498db'  # Color de fondo de los botones
-        texto_color = 'white'  # Color del texto de los botones
 
         # Crear una tabla con Rich
         table = Table(title="Eines disponibles")
@@ -38,11 +39,21 @@ class AplicacionTkinterRich:
         table.add_row("8", "[brown]Enumeració", "Eina específica per a sistemes basats en Linux que es fa servir per a la enumeració i recopilació d'informació en entorns Windows amb el protocol SMB (Server Message Block).")
         print(table)
 
-        # Crear botones para cada opción con colores personalizados
-        for i in range(1, 9):
-            btn = tk.Button(self.master, text=f"Opció {i}", command=lambda i=i: self.ejecutar_opcion(i),
-                            bg=boton_color, fg=texto_color)
-            btn.pack(pady=10)
+        # Lista de nombres de botones
+        nombres_botones = [
+            "Api Shodan",
+            "The Harvester",
+            "Més OSINT",
+            "Escaneig",
+            "Auditoria SSH",
+            "Enumeració",
+            "Bot de Telegram"
+        ]
+
+        # Crear y colocar los botones en la ventana con comandos incorporados
+        for nombre in nombres_botones:
+            boton = tk.Button(ventana_principal, text=nombre, command=lambda n=nombre: print(f"Presionaste el botón: {n}"))
+            boton.pack(pady=5)
 
     def ejecutar_opcion(self, opcion):
         try:
@@ -68,6 +79,7 @@ class AplicacionTkinterRich:
                 time.sleep(3)
                 print("Iniciant: Escaneig")
                 time.sleep(3)
+                Popen("python3 /ScriptsInterficieGrafica/app.py", stdout=PIPE, stderr=PIPE, text=True) 
             elif opcion == 7:
                 time.sleep(3)
                 print("Iniciant: theHarvester")
