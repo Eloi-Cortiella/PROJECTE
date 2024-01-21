@@ -6,7 +6,7 @@ class AplicacionTkinterRich:
     def __init__(self, master):
         self.master = master
         master.title("PROJECTE ASIX")
-        master.geometry("800x300")
+        master.geometry("800x330")
         self.crear_interfaz()
 
     def crear_interfaz(self):
@@ -17,7 +17,8 @@ class AplicacionTkinterRich:
             "Escaneig",
             "Auditoria SSH",
             "Enumeració",
-            "Bot de Telegram"
+            "Bot de Telegram",
+            "Sortir"
         ]
 
         for nombre in nombres_botones:
@@ -29,7 +30,11 @@ class AplicacionTkinterRich:
             opciones = {
                 "Api Shodan": 1,
                 "The Harvester": 2,
-                # Agrega otras opciones aquí...
+                "Més OSINT": 3,
+                "Escaneig": 4,
+                "Auditoria SSH": 5,
+                "Enumeració": 6,
+                "Bot de Telegram": 7,
             }
             opcion_seleccionada = opciones.get(opcion)
             if opcion_seleccionada is not None:

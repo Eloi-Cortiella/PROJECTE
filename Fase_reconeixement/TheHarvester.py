@@ -1,5 +1,6 @@
 import subprocess
 import time
+import logging
 from rich import print
 from rich.table import Table
 from rich.progress import Progress
@@ -30,8 +31,9 @@ table1.add_row("-c, --dns-brute","Perform a DNS brute force on the domain.")
 table1.add_row("-f FILENAME, --filename FILENAME","Save the results to an XML and JSON file.")
 table1.add_row("-b SOURCE, --source SOURCE","anubis, baidu, bevigil, binaryedge, bing, bingapi, bufferoverun, brave, censys, certspotter, criminalip, crtsh, dnsdumpster, duckduckgo, fullhunt, github-code, hackertarget, hunter, hunterhow, intelx, netlas, onyphe, otx, pentesttools, projectdiscovery, rapiddns, rocketreach, securityTrails, sitedossier, subdomaincenter, subdomainfinderc99, threatminer, tomba, urlscan, virustotal, yahoo, zoomeye")
 
-def lanzar_the_harvester():
-    
+def the_harvester():
+    logging.basicConfig(filename='error.log', level=logging.INFO)
+
     print("\n[bold green]The Harvester[/bold green]\n")
     time.sleep(1)
 
@@ -41,32 +43,30 @@ def lanzar_the_harvester():
 
     parametres = []
     while True:
-        parametre = input("Introdueix un paràmetre (p.e. '-d' o '-l', o 'stop' per finalitzar i executar theHarvester): ")
+        parametre = get_user_input("Introdueix un paràmetre (p.e. '-d' o '-l', o 'stop' per finalitzar i executar la comanda): ")
         if parametre == "stop":
             break
-        elif parametre in ("-d", "--domain", "-b", "--source", "-l", "--limit", "-S", "--start", "-p", "--proxies", "-s", "--shodan", "--screenshot", "-v", "--virtual-host", "-e", "--dns-server", "-t", "--take-over", "-r", "--dns-revolve", "-n", "--dns-lookup", "-c", "--dns-brute", "-f", "--filename", ):
+        elif parametre_valid(parametre):
             valor = get_user_input(f"Introdueix el valor per al paràmetre {parametre}: ")
             parametres.append(f"{parametre} {valor}")
         else:
-            print("Paràmetre no vàlid. Torna-ho a intentar o utilitza 'fin' per finalitzar.")
+            print("Paràmetre no vàlid. Torna-ho a intentar o escriu 'stop' per finalitzar.")
 
-    subprocess_command = f"./Fase_reconeixement/theHarvester/theHarvester.py -d {objetiu} {' '.join(parametres)}"
+    subprocess_command = ["./Fase_reconeixement/theHarvester/theHarvester.py", "-d", objetiu] + parametres
 
     try:
-        output = subprocess.check_output(subprocess_command, shell=True, text=True)
+        output = subprocess.check_output(subprocess_command, text=True)
         with open("resultats_theharvester.txt", "w") as arxiu:
             arxiu.write(output)
         print("\n[bold cyan]Resultats guardats a 'resultats_theharvester.txt'[bold cyan]\n")
         time.sleep(2)
-    except Exception as e:
+    except subprocess.CalledProcessError as e:
         print(f"S'ha produït un error en executar TheHarvester: {e}")
-    
-    try:
-        subprocess.call(subprocess_command, shell=True)
-    except Exception as e:
-        print(f"S'ha produït un error en executar TheHarvester: {e}")
-        with open('./errors.log',"a") as a:
-            a.write(str(e))
+        logging.error(f"Error en executar TheHarvester: {e}")
+
+def parametre_valid(parametre):
+    valid_params = ["-d", "--domain", "-b", "--source", "-l", "--limit", "-S", "--start", "-p", "--proxies", "-s", "--shodan", "--screenshot", "-v", "--virtual-host", "-e", "--dns-server", "-t", "--take-over", "-r", "--dns-revolve", "-n", "--dns-lookup", "-c", "--dns-brute", "-f", "--filename"]
+    return parametre in valid_params
 
 def get_user_input(prompt, validation_func=None):
     while True:

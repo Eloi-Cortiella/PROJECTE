@@ -1,7 +1,7 @@
 from subprocess import PIPE, Popen
 import time
 from Auditoria_de_serveis.Enum4linux.enumeracio import executar_enum4linux
-from Fase_reconeixement.TheHarvester import lanzar_the_harvester
+from Fase_reconeixement.TheHarvester import the_harvester
 from rich import print
 from rich.console import Console
 from rich.table import Table
@@ -61,7 +61,7 @@ def ejecutar_opcion(opcion):
                 time.sleep(3)
                 print("Iniciant: theHarvester")
                 time.sleep(1.5)
-                lanzar_the_harvester()
+                the_harvester()
             elif opcion == 8:
                 time.sleep(1.5)
                 print("Iniciant: Enum4linux")

@@ -1,5 +1,6 @@
-*.txt
+resultats_theharvester.txt
+resultats.txt
 *.log
-*/__pycache__
 /Fase_reconeixement/__pycache__/
 /Fase_reconeixement/fonts
+/Auditoria_de_serveis/Enum4linux/__pycache__

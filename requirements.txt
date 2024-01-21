@@ -1,0 +1,3 @@
+# Requirements.txt
+
+enum4linux==0.9.1
