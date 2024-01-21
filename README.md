@@ -31,9 +31,9 @@
 
 # Fase de Reconeixement
 
-## Api Shodan en Python
+# Api Shodan en Python
 
-## TheHarvester en Python
+# TheHarvester en Python
 ![theHarvester](/img/theHarvester-logo.webp)
 
 TheHarvester és una eina de codi obert dissenyada per recopilar informació de fonts públiques en línia amb l'objectiu de realitzar anàlisis d'intel·ligència i proves de penetració. Desenvolupada en Python, TheHarvester és particularment útil per recopilar informació sobre dominis, subdominis, adreces de correu electrònic, noms d'amfitrions, xarxes i altres detalls relacionats amb una entitat en línia.
@@ -157,15 +157,14 @@ def get_user_input(prompt, validation_func=None):
             print("Entrada no vàlida. Torna-ho a intentar.")
 ```
 
-### Explicació script
-
+CAL EXPLICACIÓ AMB DETALL DE L'SCRIPT
 
 
 ### Execució Script
 
 POSAR GIF CONFORME FUNCIONA L'SCRIPT
 
-## Més OSINT
+# Més OSINT
 
 Per aquesta tasca tenim que investigar sobre eines, scripts o altres recursos que ens poden semblar útils i interessants per posar el nostre script de python
 
@@ -198,7 +197,9 @@ ExifTool és una eina de línia de comandes molt potent i versàtil dissenyada p
 ![Captura_demostracio_mesOSINT_Exitfool_1](/img/Selecció_1158.png)
 ![Captura_demostracio_mesOSINT_Exitfool_2](/img/Selecció_1159.png)
 
-## Tasca - Escaneig
+# Auditoria de serveis
+
+# Escaneig
 
 - **Menú**
 
@@ -236,18 +237,13 @@ ExifTool és una eina de línia de comandes molt potent i versàtil dissenyada p
 
 ![funcionament_vulnerabilitats_serveis_escaneig](/img/Selecció_1168.png)
 
+# Auditoria SSH
 
-# Auditoria de serveis
-
-## Escaneig
-
-## Auditoria SSH
-
-## Enumeració
+# Enumeració
 
 # Funcionalitats afegides
 
-## Bot de telegram amb Python
+# Bot de telegram amb Python
 
 ### Contingut script
 
@@ -259,8 +255,14 @@ ExifTool és una eina de línia de comandes molt potent i versàtil dissenyada p
 
 ![proves_bot_telegram](/img/Selecció_1171.png)
 
-## Contenidor de Docker per a Auditories Automatitzades
+# Contenidor de Docker per a Auditories Automatitzades
 
-## Pla de Millora
+- EN PROCÉS
 
-## Landing Page
+# Pla de Millora
+
+- EN PROCÉS
+
+# Landing Page
+
+- EN PROCÉS
