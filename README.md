@@ -19,17 +19,17 @@
    1.3 [Més OSINT](#més-osint)
 
 2. **Auditoria de Serveis**
-   2.1 [Escaneig](#escaneig)
-   2.2 [Auditoria SSH](#auditoria-ssh)
-   2.3 [Enumeració](#enumeració)
+   2.1 [Escaneig](#🔉-escaneig-🔉)
+   2.2 [Auditoria SSH](#📊-auditoria-ssh-📊)
+   2.3 [Enumeració](#📃-enumeració-📃)
 
 3. **Funcionalitats Afegides**
-   3.1 [Bot de Telegram en Python](#bot-de-telegram-amb-python)
-   3.2 [Contenidor de Docker per a Auditories Automatitzades](#contenidor-de-docker-per-a-auditories-automatitzades)
+   3.1 [Bot de Telegram en Python](#🤖-bot-de-telegram-amb-python-🤖)
+   3.2 [Contenidor de Docker per a Auditories Automatitzades](#🐳-contenidor-de-docker-per-a-auditories-automatitzades-🐳)
 
-4. [Pla de Millora](#pla-de-millora)
+4. [Pla de Millora](#🔧-pla-de-millora-🔧)
 
-5. [Landing Page](#landing-page)
+5. [Landing Page](#📄-landing-page-📄)
 
 # 💡 Introducció 💡
 
