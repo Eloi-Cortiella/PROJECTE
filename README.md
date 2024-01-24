@@ -19,17 +19,17 @@
    1.3 [Més OSINT](#més-osint)
 
 2. **Auditoria de Serveis**
-   2.1 [Escaneig](#🔉-escaneig-🔉)
-   2.2 [Auditoria SSH](#📊-auditoria-ssh-📊)
-   2.3 [Enumeració](#📃-enumeració-📃)
+   2.1 [Escaneig](#escaneig)
+   2.2 [Auditoria SSH](#auditoria-ssh)
+   2.3 [Enumeració](#enumeració)
 
 3. **Funcionalitats Afegides**
-   3.1 [Bot de Telegram en Python](#🤖-bot-de-telegram-amb-python-🤖)
-   3.2 [Contenidor de Docker per a Auditories Automatitzades](#🐳-contenidor-de-docker-per-a-auditories-automatitzades-🐳)
+   3.1 [Bot de Telegram en Python](#bot-de-telegram-amb-python)
+   3.2 [Contenidor de Docker per a Auditories Automatitzades](#contenidor-de-docker-per-a-auditories-automatitzades)
 
-4. [Pla de Millora](#🔧-pla-de-millora-🔧)
+4. [Pla de Millora](#pla-de-millora)
 
-5. [Landing Page](#📄-landing-page-📄)
+5. [Landing Page](#landing-page)
 
 # 💡 Introducció 💡
 
@@ -124,7 +124,7 @@ ExifTool és una eina de línia de comandes molt potent i versàtil dissenyada p
 
 # 💻 Auditoria de serveis 💻
 
-# 🔉 Escaneig 🔉
+# Escaneig
 
 - **Menú**
 
@@ -162,13 +162,13 @@ ExifTool és una eina de línia de comandes molt potent i versàtil dissenyada p
 
 ![funcionament_vulnerabilitats_serveis_escaneig](/img/Selecció_1168.png)
 
-# 📊 Auditoria SSH 📊
+# Auditoria SSH
 
-# 📃 Enumeració 📃
+# Enumeració
 
 # 📂 Funcionalitats afegides 📂
 
-# 🤖 Bot de telegram amb Python 🤖
+# Bot de telegram amb Python
 
 ### Contingut script
 
@@ -180,14 +180,14 @@ ExifTool és una eina de línia de comandes molt potent i versàtil dissenyada p
 
 ![proves_bot_telegram](/img/Selecció_1171.png)
 
-# 🐳 Contenidor de Docker per a Auditories Automatitzades 🐳
+# Contenidor de Docker per a Auditories Automatitzades
 
 - **EN PROCÉS**
 
-# 🔧 Pla de Millora 🔧
+# Pla de Millora
 
 - **EN PROCÉS**
 
-# 📄 Landing Page 📄
+# Landing Page
 
 - **EN PROCÉS**

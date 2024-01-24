@@ -1,11 +1,10 @@
+from main import menu_tipus
+from rich.table import Table
 import subprocess
-from rich import table
-from rich import print
-from main import *
+from subprocess import PIPE, Popen
 import tkinter as tk
 from tkinter import ttk
 from tkinter import scrolledtext
-from subprocess import PIPE, Popen
 
 def executar_nmap():
 
