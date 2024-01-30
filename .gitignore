@@ -1,7 +1,5 @@
 resultats_theharvester.txt
+fonts.txt
 resultats_enum4linux.txt
 *.log
-/Fase_reconeixement/__pycache__/
-/Fase_reconeixement/fonts
-/Auditoria_de_serveis/Enum4linux/__pycache__
-/__pycache__
+__pycache__/

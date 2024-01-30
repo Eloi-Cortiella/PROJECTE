@@ -21,7 +21,7 @@ app.geometry("1550x600")
 app._set_appearance_mode("dark")
 
 # Ruta completa al script de Sherlock
-SHERLOCK_SCRIPT_PATH = "./Escaneig/sherlock/sherlock/sherlock.py"
+SHERLOCK_SCRIPT_PATH = "./sherlock/sherlock/sherlock.py"
 
 ## Variable per al arxiu log de errors
 
@@ -526,8 +526,6 @@ entry__ports.pack(pady=5)
 run_nmap_boto = CTkButton(tab_escaneig, text="Executar NMAP",
         command=run_nmap    
         ).pack(pady=5)
-
-## options_nmap.bind("<<ComboxSelected", update_ip_entry_state)
 
 # Obrir interficie gràfica
 app.mainloop()
