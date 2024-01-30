@@ -108,7 +108,7 @@ frame_osint.pack(side=tk.RIGHT, padx=20, pady=20)
 label_osint = tk.Label(frame_osint, text="Selecciona una opción de OSINT:")
 label_osint.pack()
 
-osint_options = ttk.Combobox(frame_osint, values=["Sherlock", "Exiftool"], state="readonly")
+osint_options = ttk.Combobox(frame_osint, values=["Sherlock", "Exiftool",], state="readonly")
 osint_options.current(0)
 osint_options.pack(pady=5)
 

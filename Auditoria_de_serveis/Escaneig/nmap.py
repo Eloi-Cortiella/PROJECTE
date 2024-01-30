@@ -1,4 +1,4 @@
-from main import menu_tipus
+from main2 import menu_tipus
 from rich.table import Table
 import subprocess
 from subprocess import PIPE, Popen
