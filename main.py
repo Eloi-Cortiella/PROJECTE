@@ -1,8 +1,10 @@
 from customtkinter import *
 import tkinter as tk
 from tkinter import *
+from tkinter import scrolledtext 
 from PIL import Image
 from subprocess import PIPE, Popen
+import requests
 import subprocess
 import logging
 import time
@@ -69,6 +71,8 @@ table1.add_row("-f FILENAME, --filename FILENAME","Save the results to an XML an
 table1.add_row("-b SOURCE, --source SOURCE","anubis, baidu, bevigil, binaryedge, bing, bingapi, bufferoverun, brave, censys, certspotter, criminalip, crtsh, dnsdumpster, duckduckgo, fullhunt, github-code, hackertarget, hunter, hunterhow, intelx, netlas, onyphe, otx, pentesttools, projectdiscovery, rapiddns, rocketreach, securityTrails, sitedossier, subdomaincenter, subdomainfinderc99, threatminer, tomba, urlscan, virustotal, yahoo, zoomeye")
 
 print(table1)
+
+time.sleep(1.5)
 
 ## Taules TheHarvester
 
@@ -203,7 +207,7 @@ def the_harvester():
     clear_text()
     objectiu = the_harvester_entry_target.get()
     parametres = the_harvester_entry_options.get()
-    comanda_the_harvester = ["./Fase_reconeixement/theHarvester/theHarvester.py", "-d", objectiu, parametres]
+    comanda_the_harvester = ["./theHarvester/theHarvester.py", "-d", objectiu, parametres]
 
     try:
         resultats_text.insert(tk.END,"Resultats guardats a 'resultats_theharvester.txt'\n")
@@ -308,7 +312,7 @@ logo_boto.grid(column=0, row=0, pady=(5,0), padx=10, sticky="w")
 sortir_boto = CTkButton(app,
     text="Exit/Sortir programa",
     command=exit_boto,
-    font=("Arial Bold", 20), 
+    font=("Arial Bold", 10), 
     height=50,
     width=40      
     )
@@ -318,16 +322,13 @@ sortir_boto.grid(column=0, row=1, sticky="s")
 
 ## Textbox dels resultats
 
-resultats_text = CTkTextbox(framepr,
-    height=450,
-    width=900,
-    fg_color="silver",
-    text_color="black",
-    scrollbar_button_color="#FFCC70", 
-    corner_radius=16,
-    border_color="#FFCC70", 
-    border_width=2)
+resultats_text = scrolledtext.ScrolledText(framepr,
+    height=23,
+    width=98,
+    font=("Times New Roman",13)
+    )
 resultats_text.place(x=0, y=50)
+
 
 # Tabview
 

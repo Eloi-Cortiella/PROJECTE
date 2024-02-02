@@ -33,6 +33,19 @@
 
 # 💡 Introducció 💡
 
+ch## CUSTOM TKINTER
+
+La llibreria **CustomTkinter** és una extensió de Tkinter que proporciona nous widgets moderns i personalitzables. Aquests widgets es poden utilitzar de la mateixa manera que els widgets Tkinter estàndard i també es poden utilitzar en combinació amb elements Tkinter normals.
+
+**CustomTkinter** proporciona les següents característiques principals:
+
+- **Widgets moderns i personalitzables:** CustomTkinter proporciona una àmplia gamma de widgets moderns i personalitzables, com ara botons, etiquetes, caixes de text, etc. Aquests widgets es poden utilitzar per crear interfícies d'usuari més modernes i atractius.
+- **Ajustament automàtic al tema del sistema:** CustomTkinter permet ajustar automàticament els colors i les formes dels widgets al tema del sistema operatiu. Això facilita la creació d'interfícies d'usuari que s'integrin bé amb l'entorn d'usuari.
+- **Suport per a la escala de DPI alta:** CustomTkinter suporta la escala de DPI alta per a Windows i macOS. Això permet que les interfícies d'usuari es mostrin clarament en monitors amb una resolució alta.
+
+Per utilitzar **CustomTkinter**, simplement cal importar el mòdul `customtkinter`. A continuació, es poden crear widgets **CustomTkinter** de la mateixa manera que es creen widgets Tkinter estàndard.
+
+
 # 📡 Fase de Reconeixement 📡
 
 # Api Shodan en Python

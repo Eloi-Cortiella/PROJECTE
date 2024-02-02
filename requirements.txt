@@ -1,3 +1,4 @@
-# Requirements.txt
-
-enum4linux==0.9.1
+requests==2.26.0
+pypi-install==13.7.0
+rich
+customtkinter
