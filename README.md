@@ -104,7 +104,7 @@ El menú gràfic s'ha pogut crear gràcies als paquets tkinter (s'encarga de cre
 
 TheHarvester és una eina de codi obert dissenyada per recopilar informació de fonts públiques en línia amb l'objectiu de realitzar anàlisis d'intel·ligència i proves de penetració. Desenvolupada en Python, TheHarvester és particularment útil per recopilar informació sobre dominis, subdominis, adreces de correu electrònic, noms d'amfitrions, xarxes i altres detalls relacionats amb una entitat en línia.
 
-Algunes de les característiques clau de TheHarvester són:
+Algunes de les **característiques clau** de TheHarvester són:
 
 1. Recerca de Dominis i Subdominis: TheHarvester permet buscar informació sobre un domini específic, inclosos els subdominis associats. Pots realitzar cerques en motors de cerca, motors de cerca de certificats SSL, servidors DNS i altres recursos públics per recopilar una llista exhaustiva de dominis i subdominis relacionats.
 
@@ -143,10 +143,30 @@ Per a la instal·lació de l'eina TheHarvester per tal d'executar el seu script,
 
 Aqui està el script en python de la funció que hem creat per a que cridi a l'eina theHarvester i que esculli les opcions necessaries:
 
+![theharvester_script](/img/theharvester_script.png)
 
-**POSAR FOTO DE L'SCRIPT**
+1. Funció the_harvester():
 
-**CAL EXPLICACIÓ AMB DETALL DE L'SCRIPT**
+   - S'invoca la funció ``clear_text()`` per netejar l'output anterior de la finestra de resultats.
+   - S'obté l'objectiu i els paràmetres de l'entrada de l'usuari a través de les variables the_harvester_entry_target i the_harvester_entry_options respectivament.
+   - Es crea una llista comanda_the_harvester amb els paràmetres necessaris per a executar l'eina TheHarvester mitjançant subprocess.
+Bloc try-except:
+
+2. Intenta executar les següents accions dins del bloc try i captura qualsevol excepció amb except en cas d'error.
+
+3. Resultats a la finestra de text (resultats_text) i a un fitxer (resultats_theharvester.txt):
+
+4. La funció insereix un missatge a la finestra de resultats (resultats_text) indicant que els resultats es guardaran a un fitxer específic (resultats_theharvester.txt).
+
+5. Utilitza ``subprocess.check_output()`` per executar la comanda TheHarvester amb els paràmetres proporcionats. La sortida es guarda a la variable output.
+Escriu aquesta sortida en un fitxer de text (resultats_theharvester.txt).
+
+6. Utilitza la funció executar_commanda() per a mostrar la sortida a la interfície gràfica (aquesta funció no es proporciona en el codi proporcionat).
+Bloc except:
+
+7. Captura qualsevol excepció que pugui succeir durant l'execució de la comanda TheHarvester.
+
+8. Imprimeix un missatge d'error a la consola en cas d'un possible problema durant la execució i, a més, escriu la informació de l'error en un fitxer de registre (errors.log) utilitzant la llibreria de registre (logging).
 
 ### Execució Script
 
