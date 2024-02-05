@@ -45,6 +45,55 @@ La llibreria **CustomTkinter** és una extensió de Tkinter que proporciona nous
 
 Per utilitzar **CustomTkinter**, simplement cal importar el mòdul `customtkinter`. A continuació, es poden crear widgets **CustomTkinter** de la mateixa manera que es creen widgets Tkinter estàndard.
 
+## Menú Gràfic  
+
+Quan executem el script main.py ens apareixerà el següent:
+
+![Interficie_grafica](/img/Interficie_grafica.png)
+
+Això es la interfície gràfica que hem creat de moment, al ser provisional per comprovar el funcionament de les eines, encara està en desenvolupament, però tot funciona correctament.
+
+El menú gràfic s'ha pogut crear gràcies als paquets tkinter (s'encarga de crear interficíes gràfiques) i customtkinter (personalitza més i millora l'aparença del menú gràfic.)
+
+## Descripció detallada del menú gràfic
+
+### Títol: E3 - Eines d'OSINT
+
+**Objectiu:** El menú gràfic del projecte E3 proporciona una interfície d'usuari fàcil d'utilitzar per a executar diverses eines (OSINT, TheHarvester...)
+
+### Components:
+
+1. **Barra de títol:**
+   - Mostra el nom del projecte (E3)
+
+2. **Panell d'eines:**
+   - Conté botons per a cada una de les eines disponibles, cadascun amb una icona i un nom descriptiu:
+      - Apt Shodan: Cerca informació sobre servidors web i dispositius connectats a Internet que utilitzen el gestor de paquets APT.
+      - Més OSINT: Enllaça a una pàgina web amb una llista extensa d'eines d'OSINT.
+      - The Harvester: Recull informació d'usuaris i correus electrònics a partir de noms de domini i subdominis.
+      - Auditoria SSH: Realitza una auditoria de seguretat en servidors SSH per a identificar vulnerabilitats.
+      - Enumeració: Mostra informació sobre un objectiu específic, com ara noms d'usuaris, grups, carpetes i fitxers.
+      - Bot Telegram: Envia missatges a un canal de Telegram mitjançant un bot.
+      - Escaneig: Realitza escaneigs de ports, xarxes i hosts amb nmap.
+
+3. **Panell d'opcions:**
+   - Mostra opcions específiques per a l'eina seleccionada al panell d'eines. El contingut d'aquest panell varia segons l'eina:
+      - Selecciona una de les opcions de OSINT: Mostra un menú desplegable amb les opcions disponibles per a cada eina.
+      - Introdueix el nom d'usuari: Mostra un camp de text per a introduir un nom d'usuari a buscar (p.ex. per a The Harvester).
+      - Selecciona la ruta de l'imatge: Mostra un camp de text per a seleccionar la ruta d'una imatge a analitzar (p.ex. per a l'enumeració d'imatges).
+      - Introduir la IP/URL: Mostra un camp de text per a introduir l'adreça IP o URL de l'objectiu a analitzar (p.ex. per a l'escaneig de ports).
+      - Introduir el token de Telegram: Mostra un camp de text per a introduir el token d'autorització del canal de Telegram (p.ex. per al bot de Telegram).
+
+4. **Àrea de resultats:**
+   - Mostra els resultats de l'eina seleccionada en format text.
+   - Els resultats poden incloure informació com ara:
+      - Llista de servidors web i dispositius trobats (Apt Shodan)
+      - Llista d'usuaris i correus electrònics trobats (The Harvester)
+      - Llista de vulnerabilitats trobades (Auditoria SSH)
+      - Informació sobre l'objectiu (Enumeració)
+      - Missatges enviats al canal de Telegram (Bot Telegram)
+      - Llista de ports oberts (Escaneig)
+
 
 # 📡 Fase de Reconeixement 📡
 
@@ -92,7 +141,8 @@ Per a la instal·lació de l'eina TheHarvester per tal d'executar el seu script,
 
 ### Contingut Script
 
-Aqui està el script en python que hem creat per a que cridi a l'eina theHarvester i que esculli les opcions necessaries:
+Aqui està el script en python de la funció que hem creat per a que cridi a l'eina theHarvester i que esculli les opcions necessaries:
+
 
 **POSAR FOTO DE L'SCRIPT**
 

@@ -15,12 +15,12 @@ RUN apt-get update && \
     # sudo snap install enum4linux && \
 
 RUN apt-get install -y git python3 python3-pip smbclient && \
-    pip install --upgrade pip && \
     pip3 install customtkinter
-RUN pip3 install --no-cache-dir -r ./requirements.txt
+
+RUN pip3 install --no-cache-dir -r requirements.txt -v
 
 # Instal·lació eina Enum4linux-ng
-RUN git clone https://github.com/cddmp/enum4linux-ng.git
+RUN git clone https://github.com/cddmp/enum4linux-ng.git /enum4linux
 RUN cd enum4linux-ng/ && pip3 install -r requirements.txt
 
 # Instal·lació eina theHarvester

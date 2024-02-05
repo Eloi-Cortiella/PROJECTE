@@ -1,4 +1,5 @@
-requests==2.26.0
-pypi-install==13.7.0
+pypi-install
 rich
 customtkinter
+requests
+PIL
