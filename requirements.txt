@@ -2,4 +2,4 @@ pypi-install
 rich
 customtkinter
 requests
-PIL
+pillow

@@ -76,7 +76,7 @@ time.sleep(1.5)
 
 ## Taules TheHarvester
 
-table2 = Table(title="\nParàmetres prinicpals Enum4linux")
+table2 = Table(title="\nParàmetres prinicpals Enum4linux-ng")
 
 table2.add_column("Opcions", style="Bold yellow")
 table2.add_column("Descripció", style="Bold")
@@ -94,7 +94,7 @@ print(table2)
 
 time.sleep(3)
 
-table3 = Table(title="\nParàmetres addicionals Enum4linux")
+table3 = Table(title="\nParàmetres addicionals Enum4linux-ng")
 
 table3.add_column("Opcions", style="Bold yellow")
 table3.add_column("Descripció", style="Bold")
@@ -230,7 +230,7 @@ def executar_enum4linux():
     clear_text()
     objectiu = enum4linux_entry_target.get()
     parametres = enum4linux_entry_options.get()
-    comanda_enumeracio = ["enum4linux",parametres,objectiu]
+    comanda_enumeracio = ["python3 ./enum4linux-ng/enum4linux-ng.py",parametres,objectiu]
 
     try:
         executar_commanda(comanda_enumeracio)

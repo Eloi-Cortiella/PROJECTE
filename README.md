@@ -252,7 +252,15 @@ ExifTool és una eina de línia de comandes molt potent i versàtil dissenyada p
 
 # Enumeració
 
+
+
 ## Instal·lació
+
+1. Descargar el repositori del github i clonar-lo amb la comanda ``git clone https://github.com/cddmp/enum4linux-ng.git`` 
+
+2. Accedir a la carpeta enum4linux-ng i instal·lar els requeriments de la eina: ``cd enum4linux-ng/ && pip3 install -r requirements.txt``
+
+3. Executem l'arxiu ``enum4linux-ng.py`` amb els paràmetres correctament i veiem el funcionament de la eina
 
 ## Contingut script
 
@@ -286,3 +294,12 @@ ExifTool és una eina de línia de comandes molt potent i versàtil dissenyada p
 # Landing Page
 
 - **EN PROCÉS**
+
+
+# PROBLEMES QUE HEM TINGUT
+
+## Problemes amb enum4linux
+
+- **Solució:** Instal·lar un altre paquet d'enum4linux anomenat enum4linux-ng. Aquest fa la mateixa funció que el enum4linux anterior, però usa diferents paràmetres, acabant amb els mateixos resultats.
+
+Link github: https://github.com/cddmp/enum4linux-ng
