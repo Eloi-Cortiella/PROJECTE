@@ -32,19 +32,6 @@
 5. [Landing Page](#landing-page)
 
 # 💡 Introducció 💡
-
-ch## CUSTOM TKINTER
-
-La llibreria **CustomTkinter** és una extensió de Tkinter que proporciona nous widgets moderns i personalitzables. Aquests widgets es poden utilitzar de la mateixa manera que els widgets Tkinter estàndard i també es poden utilitzar en combinació amb elements Tkinter normals.
-
-**CustomTkinter** proporciona les següents característiques principals:
-
-- **Widgets moderns i personalitzables:** CustomTkinter proporciona una àmplia gamma de widgets moderns i personalitzables, com ara botons, etiquetes, caixes de text, etc. Aquests widgets es poden utilitzar per crear interfícies d'usuari més modernes i atractius.
-- **Ajustament automàtic al tema del sistema:** CustomTkinter permet ajustar automàticament els colors i les formes dels widgets al tema del sistema operatiu. Això facilita la creació d'interfícies d'usuari que s'integrin bé amb l'entorn d'usuari.
-- **Suport per a la escala de DPI alta:** CustomTkinter suporta la escala de DPI alta per a Windows i macOS. Això permet que les interfícies d'usuari es mostrin clarament en monitors amb una resolució alta.
-
-Per utilitzar **CustomTkinter**, simplement cal importar el mòdul `customtkinter`. A continuació, es poden crear widgets **CustomTkinter** de la mateixa manera que es creen widgets Tkinter estàndard.
-
 ## Menú Gràfic  
 
 Quan executem el script main.py ens apareixerà el següent:
@@ -55,7 +42,21 @@ Això es la interfície gràfica que hem creat de moment, al ser provisional per
 
 El menú gràfic s'ha pogut crear gràcies als paquets tkinter (s'encarga de crear interficíes gràfiques) i customtkinter (personalitza més i millora l'aparença del menú gràfic.)
 
+## CUSTOM TKINTER
+
+La llibreria **CustomTkinter** és una extensió de Tkinter que proporciona nous widgets moderns i personalitzables. Aquests widgets es poden utilitzar de la mateixa manera que els widgets Tkinter estàndard i també es poden utilitzar en combinació amb elements Tkinter normals.
+
+**CustomTkinter** proporciona les següents característiques principals:
+
+- **Widgets moderns i personalitzables:** CustomTkinter proporciona una àmplia gamma de widgets moderns i personalitzables, com ara botons, etiquetes, caixes de text, etc. Aquests widgets es poden utilitzar per crear interfícies d'usuari més modernes i atractius.
+- **Ajustament automàtic al tema del sistema:** CustomTkinter permet ajustar automàticament els colors i les formes dels widgets al tema del sistema operatiu. Això facilita la creació d'interfícies d'usuari que s'integrin bé amb l'entorn d'usuari.
+- **Suport per a la escala de DPI alta:** CustomTkinter suporta la escala de DPI alta per a Windows i macOS. Això permet que les interfícies d'usuari es mostrin clarament en monitors amb una resolució alta.
+
+Per utilitzar **CustomTkinter**, simplement cal importar al script de python `customtkinter`. A continuació, es poden crear widgets **CustomTkinter** de la mateixa manera que es creen widgets Tkinter estàndard.
+
 ## Descripció detallada del menú gràfic
+
+![execucio_main.py](/img/Prova4.gif)
 
 ### Títol: PROJECTE E3
 
@@ -170,6 +171,8 @@ Bloc except:
 
 ### Execució Script
 
+![menu_theharvester](/img/menu_theharvester.png)
+
 **POSAR GIF CONFORME FUNCIONA L'SCRIPT**
 
 # Més OSINT
@@ -249,6 +252,12 @@ ExifTool és una eina de línia de comandes molt potent i versàtil dissenyada p
 
 # Enumeració
 
+## Instal·lació
+
+## Contingut script
+
+## Comprovacions
+
 # 📂 Funcionalitats afegides 📂
 
 # Bot de telegram amb Python
@@ -257,7 +266,6 @@ ExifTool és una eina de línia de comandes molt potent i versàtil dissenyada p
 
 ![bot_telegram_script](/img/Selecció_1170.png)
 
-
 ### Prova
 - Prova amb una imatge al grup de telegram per si funciona l’enviament desde el bot amb python, i veiem que s’envia correctament
 
@@ -265,11 +273,15 @@ ExifTool és una eina de línia de comandes molt potent i versàtil dissenyada p
 
 # Contenidor de Docker per a Auditories Automatitzades
 
-- **EN PROCÉS**
+## Introducció
+
+## Contingut arxiu Dockerfile
+
+## Execució comandes docker
+
+## Comprovacions contenidor Docker
 
 # Pla de Millora
-
-- **EN PROCÉS**
 
 # Landing Page
 
