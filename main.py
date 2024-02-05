@@ -224,7 +224,7 @@ def the_harvester():
         executar_commanda(comanda_the_harvester)
 
     except Exception as e:
-        print("S'ha produït un error en executar TheHarvester Mira l'arxiu errors.log per veure l'error.")
+        resultats_text.insert(tk.END,"S'ha produït un error en executar TheHarvester Mira l'arxiu errors.log per veure l'error.")
         logging.error(f"{temps_actual}Error en executar TheHarvester: {e}")
 
 ## Funcions enum4linux
@@ -400,15 +400,14 @@ tabviewpr.grid(column=0,row=1, rowspan=1, padx=5)
 
 tab_shodan = tabviewpr.add("Api Shodan")
 
-api_shodan_label_ip = Label(tab_shodan,
-        text="Introdueix la IP a consultar:"
+api_shodan_label_ip = CTkLabel(tab_shodan,
+        text="Introdueix la IP a consultar:",
+        font=("Arial", 15)
         ).pack(pady=5)
 
 api_shodan_entry_ip = Entry(tab_shodan
         )
 api_shodan_entry_ip.pack(pady=5)
-
-
 
 run_api_shodan_boto = CTkButton(tab_shodan,
     text="Executar Api Shodan",

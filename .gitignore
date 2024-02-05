@@ -1,5 +1,3 @@
-resultats_theharvester.txt
-fonts.txt
-resultats_enumeracio.txt
+*.txt
 *.log
 __pycache__/
