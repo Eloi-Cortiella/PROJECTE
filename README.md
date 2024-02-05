@@ -46,6 +46,9 @@ El menú gràfic s'ha pogut crear gràcies als paquets tkinter (s'encarga de cre
 
 La llibreria **CustomTkinter** és una extensió de Tkinter que proporciona nous widgets moderns i personalitzables. Aquests widgets es poden utilitzar de la mateixa manera que els widgets Tkinter estàndard i també es poden utilitzar en combinació amb elements Tkinter normals.
 
+Link github: https://customtkinter.tomschimansky.com/
+Link documentació: https://customtkinter.tomschimansky.com/
+
 **CustomTkinter** proporciona les següents característiques principals:
 
 - **Widgets moderns i personalitzables:** CustomTkinter proporciona una àmplia gamma de widgets moderns i personalitzables, com ara botons, etiquetes, caixes de text, etc. Aquests widgets es poden utilitzar per crear interfícies d'usuari més modernes i atractius.
@@ -252,8 +255,6 @@ ExifTool és una eina de línia de comandes molt potent i versàtil dissenyada p
 
 # Enumeració
 
-
-
 ## Instal·lació
 
 1. Descargar el repositori del github i clonar-lo amb la comanda ``git clone https://github.com/cddmp/enum4linux-ng.git`` 
@@ -262,7 +263,11 @@ ExifTool és una eina de línia de comandes molt potent i versàtil dissenyada p
 
 3. Executem l'arxiu ``enum4linux-ng.py`` amb els paràmetres correctament i veiem el funcionament de la eina
 
-## Contingut script
+## Contingut scripts
+
+![script_enum4linux](/img/script_enum4linux-ng.png)
+
+**POSAR FOTOS DE LES TAULES**
 
 ## Comprovacions
 
@@ -285,21 +290,31 @@ ExifTool és una eina de línia de comandes molt potent i versàtil dissenyada p
 
 ## Contingut arxiu Dockerfile
 
-## Execució comandes docker
+![Contingut Dockerfile](/img/contingut_dockerfile.png)
 
-## Comprovacions contenidor Docker
+## Comandes per al contenidor Docker
+
+## Comprovacions scripts contenidor Docker
 
 # Pla de Millora
 
+
+## Possibles millores de cara al futur
+
+1. EXPLICAR MILLORA D'INTERFÍCIE D'USUARI: MÉS CÒMODE I VISUAL
+2. MILLORA DE SCRIPTS: Més eficients i escalables
+
 # Landing Page
 
-- **EN PROCÉS**
+- **EN PROCÉS (No acabat)**
 
-
-# PROBLEMES QUE HEM TINGUT
+# Problemes que hem tingut durant el projecte
 
 ## Problemes amb enum4linux
 
+- **Problema:**
 - **Solució:** Instal·lar un altre paquet d'enum4linux anomenat enum4linux-ng. Aquest fa la mateixa funció que el enum4linux anterior, però usa diferents paràmetres, acabant amb els mateixos resultats.
 
-Link github: https://github.com/cddmp/enum4linux-ng
+# Conclusions
+
+## Conclusions a les que hem anat arribant desenvolupant el codi, durant la planificació de tasques... 

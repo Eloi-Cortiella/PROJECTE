@@ -1,0 +1,174 @@
+ENUM4LINUX - next generation (v1.3.2)
+
+ ==========================
+|    Target Information    |
+ ==========================
+[*] Target ........... 192.168.203.100
+[*] Username ......... ''
+[*] Random Username .. 'ngedaefc'
+[*] Password ......... ''
+[*] Timeout .......... 5 second(s)
+
+ ========================================
+|    Listener Scan on 192.168.203.100    |
+ ========================================
+[*] Checking LDAP
+[-] Could not connect to LDAP on 389/tcp: connection refused
+[*] Checking LDAPS
+[-] Could not connect to LDAPS on 636/tcp: connection refused
+[*] Checking SMB
+[+] SMB is accessible on 445/tcp
+[*] Checking SMB over NetBIOS
+[+] SMB over NetBIOS is accessible on 139/tcp
+
+ ============================================
+|    SMB Dialect Check on 192.168.203.100    |
+ ============================================
+[*] Trying on 445/tcp
+[+] Supported dialects and settings:
+Supported dialects:
+  SMB 1.0: false
+  SMB 2.02: true
+  SMB 2.1: true
+  SMB 3.0: true
+  SMB 3.1.1: true
+Preferred dialect: SMB 3.0
+SMB1 only: false
+SMB signing required: false
+
+ ==============================================================
+|    Domain Information via SMB session for 192.168.203.100    |
+ ==============================================================
+[*] Enumerating via unauthenticated SMB session on 445/tcp
+[+] Found domain information via SMB
+NetBIOS computer name: INSEBRE-COM
+NetBIOS domain name: ''
+DNS domain: ''
+FQDN: insebre-com
+Derived membership: workgroup member
+Derived domain: unknown
+
+ ============================================
+|    RPC Session Check on 192.168.203.100    |
+ ============================================
+[*] Check for null session
+[+] Server allows session using username '', password ''
+[*] Check for random user
+[+] Server allows session using username 'ngedaefc', password ''
+[H] Rerunning enumeration with user 'ngedaefc' might give more results
+
+ ======================================================
+|    Domain Information via RPC for 192.168.203.100    |
+ ======================================================
+[+] Domain: WORKGROUP
+[+] Domain SID: NULL SID
+[+] Membership: workgroup member
+
+ ==================================================
+|    OS Information via RPC for 192.168.203.100    |
+ ==================================================
+[*] Enumerating via unauthenticated SMB session on 445/tcp
+[+] Found OS information via SMB
+[*] Enumerating via 'srvinfo'
+[+] Found OS information via 'srvinfo'
+[+] After merging OS information we have the following result:
+OS: Linux/Unix
+OS version: '6.1'
+OS release: ''
+OS build: '0'
+Native OS: not supported
+Native LAN manager: not supported
+Platform id: '500'
+Server type: '0x809a03'
+Server type string: Wk Sv PrQ Unx NT SNT insebre-com server (Samba, Ubuntu)
+
+ ========================================
+|    Users via RPC on 192.168.203.100    |
+ ========================================
+[*] Enumerating users via 'querydispinfo'
+[+] Found 0 user(s) via 'querydispinfo'
+[*] Enumerating users via 'enumdomusers'
+[+] Found 0 user(s) via 'enumdomusers'
+
+ =========================================
+|    Groups via RPC on 192.168.203.100    |
+ =========================================
+[*] Enumerating local groups
+[+] Found 0 group(s) via 'enumalsgroups domain'
+[*] Enumerating builtin groups
+[+] Found 0 group(s) via 'enumalsgroups builtin'
+[*] Enumerating domain groups
+[+] Found 0 group(s) via 'enumdomgroups'
+
+ =========================================
+|    Shares via RPC on 192.168.203.100    |
+ =========================================
+[*] Enumerating shares
+[+] Found 5 share(s):
+HP-ColorLaserJet-MFP-M278-M281:
+  comment: HP HP ColorLaserJet MFP M278-M281
+  type: Printer
+HP-ColorLaserJet-MFP-M278-M281-Fax:
+  comment: HP Fax
+  type: Printer
+HP-LaserJet-P3010:
+  comment: HP LaserJet P3010 Series
+  type: Printer
+IPC$:
+  comment: IPC Service (insebre-com server (Samba, Ubuntu))
+  type: IPC
+print$:
+  comment: Printer Drivers
+  type: Disk
+[*] Testing share HP-ColorLaserJet-MFP-M278-M281
+[+] Mapping: DENIED, Listing: N/A
+[*] Testing share HP-ColorLaserJet-MFP-M278-M281-Fax
+[+] Mapping: DENIED, Listing: N/A
+[*] Testing share HP-LaserJet-P3010
+[+] Mapping: DENIED, Listing: N/A
+[*] Testing share IPC$
+[-] Could not check share: STATUS_OBJECT_NAME_NOT_FOUND
+[*] Testing share print$
+[+] Mapping: DENIED, Listing: N/A
+
+ ============================================
+|    Policies via RPC for 192.168.203.100    |
+ ============================================
+[*] Trying port 445/tcp
+[+] Found policy:
+Domain password information:
+  Password history length: None
+  Minimum password length: 5
+  Maximum password age: 49710 days 6 hours 21 minutes
+  Password properties:
+  - DOMAIN_PASSWORD_COMPLEX: false
+  - DOMAIN_PASSWORD_NO_ANON_CHANGE: false
+  - DOMAIN_PASSWORD_NO_CLEAR_CHANGE: false
+  - DOMAIN_PASSWORD_LOCKOUT_ADMINS: false
+  - DOMAIN_PASSWORD_PASSWORD_STORE_CLEARTEXT: false
+  - DOMAIN_PASSWORD_REFUSE_PASSWORD_CHANGE: false
+Domain lockout information:
+  Lockout observation window: 30 minutes
+  Lockout duration: 30 minutes
+  Lockout threshold: None
+Domain logoff information:
+  Force logoff time: 49710 days 6 hours 21 minutes
+
+ ============================================
+|    Printers via RPC for 192.168.203.100    |
+ ============================================
+[+] Found 3 printer(s):
+\\192.168.203.100\HP-ColorLaserJet-MFP-M278-M281:
+  description: \\192.168.203.100\HP-ColorLaserJet-MFP-M278-M281,,HP HP ColorLaserJet MFP M278-M281
+  comment: HP HP ColorLaserJet MFP M278-M281
+  flags: '0x800000'
+\\192.168.203.100\HP-ColorLaserJet-MFP-M278-M281-Fax:
+  description: \\192.168.203.100\HP-ColorLaserJet-MFP-M278-M281-Fax,,HP Fax
+  comment: HP Fax
+  flags: '0x800000'
+\\192.168.203.100\HP-LaserJet-P3010:
+  description: \\192.168.203.100\HP-LaserJet-P3010,,HP LaserJet P3010 Series
+  comment: HP LaserJet P3010 Series
+  flags: '0x800000'
+
+Completed after 1.28 seconds

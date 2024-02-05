@@ -10,13 +10,12 @@ COPY . .
 RUN apt-get update && \
     apt-get install -y nmap auditd && \
     apt-get install -y python3-tk
-    # pip3 install customtkinter
-    # apt-get install -y snapd && \
-    # sudo snap install enum4linux && \
 
+## Dependencies
 RUN apt-get install -y git python3 python3-pip smbclient && \
     pip3 install customtkinter
 
+## Requeriments
 RUN pip3 install --no-cache-dir -r requirements.txt -v
 
 # Instal·lació eina Enum4linux-ng

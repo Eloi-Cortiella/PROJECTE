@@ -32,10 +32,22 @@
 5. [Landing Page](#landing-page)
 
 # 💡 Introducció 💡
+## Menú Gràfic  
 
-ch## CUSTOM TKINTER
+Quan executem el script main.py ens apareixerà el següent:
+
+![Interficie_grafica](/img/Interficie_grafica.png)
+
+Això es la interfície gràfica que hem creat de moment, al ser provisional per comprovar el funcionament de les eines, encara està en desenvolupament, però tot funciona correctament.
+
+El menú gràfic s'ha pogut crear gràcies als paquets tkinter (s'encarga de crear interficíes gràfiques) i customtkinter (personalitza més i millora l'aparença del menú gràfic.)
+
+## CUSTOM TKINTER
 
 La llibreria **CustomTkinter** és una extensió de Tkinter que proporciona nous widgets moderns i personalitzables. Aquests widgets es poden utilitzar de la mateixa manera que els widgets Tkinter estàndard i també es poden utilitzar en combinació amb elements Tkinter normals.
+
+Link github: https://customtkinter.tomschimansky.com/
+Link documentació: https://customtkinter.tomschimansky.com/
 
 **CustomTkinter** proporciona les següents característiques principals:
 
@@ -43,7 +55,48 @@ La llibreria **CustomTkinter** és una extensió de Tkinter que proporciona nous
 - **Ajustament automàtic al tema del sistema:** CustomTkinter permet ajustar automàticament els colors i les formes dels widgets al tema del sistema operatiu. Això facilita la creació d'interfícies d'usuari que s'integrin bé amb l'entorn d'usuari.
 - **Suport per a la escala de DPI alta:** CustomTkinter suporta la escala de DPI alta per a Windows i macOS. Això permet que les interfícies d'usuari es mostrin clarament en monitors amb una resolució alta.
 
-Per utilitzar **CustomTkinter**, simplement cal importar el mòdul `customtkinter`. A continuació, es poden crear widgets **CustomTkinter** de la mateixa manera que es creen widgets Tkinter estàndard.
+Per utilitzar **CustomTkinter**, simplement cal importar al script de python `customtkinter`. A continuació, es poden crear widgets **CustomTkinter** de la mateixa manera que es creen widgets Tkinter estàndard.
+
+## Descripció detallada del menú gràfic
+
+![execucio_main.py](/img/Prova4.gif)
+
+### Títol: PROJECTE E3
+
+**Objectiu:** El menú gràfic del projecte E3 proporciona una interfície d'usuari fàcil d'utilitzar per a executar diverses eines (OSINT, TheHarvester...)
+
+### Components:
+
+1. **Barra de títol:**
+   - Mostra el nom del projecte (E3)
+
+2. **Panell d'eines:**
+   - Conté botons per a cada una de les eines disponibles, cadascun amb una icona i un nom descriptiu:
+      - Apt Shodan: Cerca informació sobre servidors web i dispositius connectats a Internet que utilitzen el gestor de paquets APT.
+      - Més OSINT: Enllaça a una pàgina web amb una llista extensa d'eines d'OSINT.
+      - The Harvester: Recull informació d'usuaris i correus electrònics a partir de noms de domini i subdominis.
+      - Auditoria SSH: Realitza una auditoria de seguretat en servidors SSH per a identificar vulnerabilitats.
+      - Enumeració: Mostra informació sobre un objectiu específic, com ara noms d'usuaris, grups, carpetes i fitxers.
+      - Bot Telegram: Envia missatges a un canal de Telegram mitjançant un bot.
+      - Escaneig: Realitza escaneigs de ports, xarxes i hosts amb nmap.
+
+3. **Panell d'opcions:**
+   - Mostra opcions específiques per a l'eina seleccionada al panell d'eines. El contingut d'aquest panell varia segons l'eina:
+      - Selecciona una de les opcions de OSINT: Mostra un menú desplegable amb les opcions disponibles per a cada eina.
+      - Introdueix el nom d'usuari: Mostra un camp de text per a introduir un nom d'usuari a buscar (p.ex. per a The Harvester).
+      - Selecciona la ruta de l'imatge: Mostra un camp de text per a seleccionar la ruta d'una imatge a analitzar (p.ex. per a l'enumeració d'imatges).
+      - Introduir la IP/URL: Mostra un camp de text per a introduir l'adreça IP o URL de l'objectiu a analitzar (p.ex. per a l'escaneig de ports).
+      - Introduir el token de Telegram: Mostra un camp de text per a introduir el token d'autorització del canal de Telegram (p.ex. per al bot de Telegram).
+
+4. **Àrea de resultats:**
+   - Mostra els resultats de l'eina seleccionada en format text.
+   - Els resultats poden incloure informació com ara:
+      - Llista de servidors web i dispositius trobats (Apt Shodan)
+      - Llista d'usuaris i correus electrònics trobats (The Harvester)
+      - Llista de vulnerabilitats trobades (Auditoria SSH)
+      - Informació sobre l'objectiu (Enumeració)
+      - Missatges enviats al canal de Telegram (Bot Telegram)
+      - Llista de ports oberts (Escaneig)
 
 
 # 📡 Fase de Reconeixement 📡
@@ -55,7 +108,7 @@ Per utilitzar **CustomTkinter**, simplement cal importar el mòdul `customtkinte
 
 TheHarvester és una eina de codi obert dissenyada per recopilar informació de fonts públiques en línia amb l'objectiu de realitzar anàlisis d'intel·ligència i proves de penetració. Desenvolupada en Python, TheHarvester és particularment útil per recopilar informació sobre dominis, subdominis, adreces de correu electrònic, noms d'amfitrions, xarxes i altres detalls relacionats amb una entitat en línia.
 
-Algunes de les característiques clau de TheHarvester són:
+Algunes de les **característiques clau** de TheHarvester són:
 
 1. Recerca de Dominis i Subdominis: TheHarvester permet buscar informació sobre un domini específic, inclosos els subdominis associats. Pots realitzar cerques en motors de cerca, motors de cerca de certificats SSL, servidors DNS i altres recursos públics per recopilar una llista exhaustiva de dominis i subdominis relacionats.
 
@@ -92,13 +145,36 @@ Per a la instal·lació de l'eina TheHarvester per tal d'executar el seu script,
 
 ### Contingut Script
 
-Aqui està el script en python que hem creat per a que cridi a l'eina theHarvester i que esculli les opcions necessaries:
+Aqui està el script en python de la funció que hem creat per a que cridi a l'eina theHarvester i que esculli les opcions necessaries:
 
-**POSAR FOTO DE L'SCRIPT**
+![theharvester_script](/img/theharvester_script.png)
 
-**CAL EXPLICACIÓ AMB DETALL DE L'SCRIPT**
+1. Funció the_harvester():
+
+   - S'invoca la funció ``clear_text()`` per netejar l'output anterior de la finestra de resultats.
+   - S'obté l'objectiu i els paràmetres de l'entrada de l'usuari a través de les variables the_harvester_entry_target i the_harvester_entry_options respectivament.
+   - Es crea una llista comanda_the_harvester amb els paràmetres necessaris per a executar l'eina TheHarvester mitjançant subprocess.
+Bloc try-except:
+
+2. Intenta executar les següents accions dins del bloc try i captura qualsevol excepció amb except en cas d'error.
+
+3. Resultats a la finestra de text (resultats_text) i a un fitxer (resultats_theharvester.txt):
+
+4. La funció insereix un missatge a la finestra de resultats (resultats_text) indicant que els resultats es guardaran a un fitxer específic (resultats_theharvester.txt).
+
+5. Utilitza ``subprocess.check_output()`` per executar la comanda TheHarvester amb els paràmetres proporcionats. La sortida es guarda a la variable output.
+Escriu aquesta sortida en un fitxer de text (resultats_theharvester.txt).
+
+6. Utilitza la funció executar_commanda() per a mostrar la sortida a la interfície gràfica (aquesta funció no es proporciona en el codi proporcionat).
+Bloc except:
+
+7. Captura qualsevol excepció que pugui succeir durant l'execució de la comanda TheHarvester.
+
+8. Imprimeix un missatge d'error a la consola en cas d'un possible problema durant la execució i, a més, escriu la informació de l'error en un fitxer de registre (errors.log) utilitzant la llibreria de registre (logging).
 
 ### Execució Script
+
+![menu_theharvester](/img/menu_theharvester.png)
 
 **POSAR GIF CONFORME FUNCIONA L'SCRIPT**
 
@@ -179,6 +255,22 @@ ExifTool és una eina de línia de comandes molt potent i versàtil dissenyada p
 
 # Enumeració
 
+## Instal·lació
+
+1. Descargar el repositori del github i clonar-lo amb la comanda ``git clone https://github.com/cddmp/enum4linux-ng.git`` 
+
+2. Accedir a la carpeta enum4linux-ng i instal·lar els requeriments de la eina: ``cd enum4linux-ng/ && pip3 install -r requirements.txt``
+
+3. Executem l'arxiu ``enum4linux-ng.py`` amb els paràmetres correctament i veiem el funcionament de la eina
+
+## Contingut scripts
+
+![script_enum4linux](/img/script_enum4linux-ng.png)
+
+**POSAR FOTOS DE LES TAULES**
+
+## Comprovacions
+
 # 📂 Funcionalitats afegides 📂
 
 # Bot de telegram amb Python
@@ -187,7 +279,6 @@ ExifTool és una eina de línia de comandes molt potent i versàtil dissenyada p
 
 ![bot_telegram_script](/img/Selecció_1170.png)
 
-
 ### Prova
 - Prova amb una imatge al grup de telegram per si funciona l’enviament desde el bot amb python, i veiem que s’envia correctament
 
@@ -195,12 +286,31 @@ ExifTool és una eina de línia de comandes molt potent i versàtil dissenyada p
 
 # Contenidor de Docker per a Auditories Automatitzades
 
-- **EN PROCÉS**
+## Introducció
+
+## Contingut arxiu Dockerfile
+
+## Execució comandes docker
+
+## Comprovacions contenidor Docker
 
 # Pla de Millora
 
-- **EN PROCÉS**
+## EXPLICAR MILLORA D'INTERFÍCIE D'USUARI: MÉS CÒMODE I VISUAL
+
+## MILLORA DE SCRIPTS
 
 # Landing Page
 
 - **EN PROCÉS**
+
+
+# PROBLEMES QUE HEM TINGUT
+
+## Problemes amb enum4linux
+
+- **Solució:** Instal·lar un altre paquet d'enum4linux anomenat enum4linux-ng. Aquest fa la mateixa funció que el enum4linux anterior, però usa diferents paràmetres, acabant amb els mateixos resultats.
+
+Link github: https://github.com/cddmp/enum4linux-ng
+
+# Conclusions
