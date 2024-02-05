@@ -3,3 +3,4 @@ rich
 customtkinter
 requests
 pillow
+shodan
