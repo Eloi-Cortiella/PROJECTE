@@ -57,7 +57,7 @@ El menú gràfic s'ha pogut crear gràcies als paquets tkinter (s'encarga de cre
 
 ## Descripció detallada del menú gràfic
 
-### Títol: E3 - Eines d'OSINT
+### Títol: PROJECTE E3
 
 **Objectiu:** El menú gràfic del projecte E3 proporciona una interfície d'usuari fàcil d'utilitzar per a executar diverses eines (OSINT, TheHarvester...)
 
