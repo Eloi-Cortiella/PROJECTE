@@ -8,19 +8,17 @@ import requests
 import webbrowser
 import subprocess
 import logging
-import time
+#import time
 import datetime
 import re
 import shodan
-from rich import print
-from rich.table import Table
-from rich.traceback import install
-install()
+#from rich import print
+#from rich.table import Table
+#from rich.traceback import install
+#install()
 
 # Crear interficie grafica amb customtkinter
 app = CTk()
-#icono = os.path.join(sys.path[0], "/img/logo_empresa.png")
-#app.iconbitmap(icono)
 
 # Configuracions finestra
 app.title("PROJECTE E3")
@@ -707,9 +705,19 @@ run_enum4linux_boto = CTkButton(tab_enumeracio, text="Executar Enum4linux",
 
 # Bot Telegram
 
-tab_telegram = tabviewpr.add("Bot Telegram")
+## Tabview parametres eines bot telegram
 
 tab_telegram_par = tabviewpar.add("Bot Telegram")
+
+telgram_label__par = CTkLabel(tab_telegram_par, 
+        text = "Amb l'eina del bot de Telegram, pots enviar missatges, imatges i qualsevol altre tipus de document a qualsevol grup de telegram.\nPer poder connectar-te amb el bot, hauràs d'introduir el Token del bot i el id de grup del Telegram.\n\n Respecte el enviament de documents i imatges, pots usar un botó el qual s'encarrega de buscar, amb l'explorador d'arxius, la ruta completa del objecte,\nsense la necessitat d'introduïr manualment la ruta.\n\nPer últim, els dos botons restants, s'encarreguen d'enviar els missatges i els documents/imatges, respectivament.",
+        justify="left",
+        font=("Arial", 18)
+        ).pack(pady=5)
+
+## Tabview opcions eines bot telegram
+
+tab_telegram = tabviewpr.add("Bot Telegram")
 
 telgram_label_token = CTkLabel(tab_telegram, 
         text = "Coloca aqui el token del teu bot:",
