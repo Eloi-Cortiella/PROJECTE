@@ -1,4 +1,4 @@
-FROM python:3.10
+FROM ubuntu:latest
 
 # Configura el directori de treball
 WORKDIR /PROJECTE
@@ -13,7 +13,7 @@ RUN apt-get update && \
 
 ## Dependencies
 RUN apt-get install -y git python3 python3-pip smbclient && \
-    pip3 install customtkinter
+    pip3 install customtkinter &&
 
 ## Requeriments
 RUN pip3 install --no-cache-dir -r requirements.txt -v
@@ -26,8 +26,10 @@ RUN cd enum4linux-ng/ && pip3 install -r requirements.txt
 RUN git clone https://github.com/laramies/theHarvester.git /theHarvester
 RUN cd theHarvester/ pip3 install -r requirements.txt
 
+#RUN export DISPLAY=:0.0º
+
 # Defineix l'entorn
-# ENV LANG es.UTF-8
+#ENV LANG es.UTF-8
 
 # CMD o altres instruccions per executar la aplicació
-ENTRYPOINT ["python3", "main.py"]
+# ENTRYPOINT ["python3", "main.py"]

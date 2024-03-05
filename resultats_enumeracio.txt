@@ -3,24 +3,24 @@ ENUM4LINUX - next generation (v1.3.2)
  ==========================
 |    Target Information    |
  ==========================
-[*] Target ........... 192.168.203.100
+[*] Target ........... 192.168.203.122
 [*] Username ......... ''
-[*] Random Username .. 'hbhurupo'
+[*] Random Username .. 'tbqxseym'
 [*] Password ......... ''
 [*] Timeout .......... 5 second(s)
 
  ========================================
-|    Listener Scan on 192.168.203.100    |
+|    Listener Scan on 192.168.203.122    |
  ========================================
 [*] Checking LDAP
-[-] Could not connect to LDAP on 389/tcp: timed out
+[-] Could not connect to LDAP on 389/tcp: connection refused
 [*] Checking LDAPS
-[-] Could not connect to LDAPS on 636/tcp: timed out
+[-] Could not connect to LDAPS on 636/tcp: connection refused
 [*] Checking SMB
-[-] Could not connect to SMB on 445/tcp: timed out
+[-] Could not connect to SMB on 445/tcp: connection refused
 [*] Checking SMB over NetBIOS
-[-] Could not connect to SMB over NetBIOS on 139/tcp: timed out
+[-] Could not connect to SMB over NetBIOS on 139/tcp: connection refused
 
 [!] Aborting remainder of tests since neither SMB nor LDAP are accessible
 
-Completed after 20.02 seconds
+Completed after 0.00 seconds

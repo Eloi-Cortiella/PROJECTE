@@ -4,3 +4,6 @@ customtkinter
 requests
 pillow
 shodan
+pandas
+requests-futures
+torrequest

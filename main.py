@@ -5,6 +5,7 @@ from tkinter import scrolledtext
 from PIL import Image
 from subprocess import PIPE, Popen
 import requests
+import webbrowser
 import subprocess
 import logging
 import time
@@ -18,14 +19,16 @@ install()
 
 # Crear interficie grafica amb customtkinter
 app = CTk()
+#icono = os.path.join(sys.path[0], "/img/logo_empresa.png")
+#app.iconbitmap(icono)
 
 # Configuracions finestra
 app.title("PROJECTE E3")
-app.geometry("1550x600")
+app.geometry("1550x1200")
 app._set_appearance_mode("dark")
 
 # Ruta completa al script de Sherlock
-SHERLOCK_SCRIPT_PATH = "./sherlock/sherlock/sherlock.py"
+SHERLOCK_SCRIPT_PATH = "/home/alumne/Escriptori/Moodle_2N/PROJECTE/sherlock/sherlock/sherlock.py"
 
 # Constant de la API KEY
 SHODAN_API_KEY = '2zHHXdcuY608POXVdGKZXb9fYngNjROO'
@@ -36,6 +39,7 @@ logging.basicConfig(filename='error.log', level=logging.INFO)
 
 temps_actual = datetime.datetime.now()
 
+'''
 print("""[bold yellow]
 
 .______   .______        ______          __   _______   ______ .___________. _______     _______  ____   
@@ -45,85 +49,7 @@ print("""[bold yellow]
 |  |      |  |\  \----.|  `--'  | |  `--'  | |  |____ |  `----.    |  |     |  |____    |  |____  ___) |
 | _|      | _| `._____| \______/   \______/  |_______| \______|    |__|     |_______|   |_______||____/
 \n\n\n
-""")
-
-
-time.sleep(2)
-
-# Taules
-
-## Taula The Harvester
-
-table1 = Table(title="Paràmetres principals")
-
-table1.add_column("Opcions", style="Bold yellow")
-table1.add_column("Descripció", style="Bold")
-
-table1.add_row("-h, --help","Show help message and exit.")
-table1.add_row("-d DOMAIN, --domain DOMAIN","Company name or domain to search.")
-table1.add_row("-l LIMIT, --limit LIMIT","Limit the number of search results, default=500.")
-table1.add_row("-S START, --start START","Start with result number X, default=0.")
-table1.add_row("-p, --proxies","Use proxies for requests, enter proxies in proxies.yaml.")
-table1.add_row("-s, --shodan","Use Shodan to query discovered hosts.")
-table1.add_row("--screenshot SCREENSHOT","Take screenshots of resolved domains specify output directory: --screenshot output_directory")
-table1.add_row("-v, --virtual-host","Verify host name via DNS resolution and search for virtual hosts.")
-table1.add_row("-e NDS_SERVER, --dns-server DNS_SERVER"," DNS server to use for lookup.")
-table1.add_row("-t, --take-over","Check for takeovers.")
-table1.add_row("-r [DNS_RESOLVE], --dns-resolve [DNS_RESOLVE]","Perform DNS resolution on subdomains with a resolver list or passed inresolvers, default False.")
-table1.add_row("-n, --dns-lookup","Enable DNS server lookup, default False.")
-table1.add_row("-c, --dns-brute","Perform a DNS brute force on the domain.")
-table1.add_row("-f FILENAME, --filename FILENAME","Save the results to an XML and JSON file.")
-table1.add_row("-b SOURCE, --source SOURCE","anubis, baidu, bevigil, binaryedge, bing, bingapi, bufferoverun, brave, censys, certspotter, criminalip, crtsh, dnsdumpster, duckduckgo, fullhunt, github-code, hackertarget, hunter, hunterhow, intelx, netlas, onyphe, otx, pentesttools, projectdiscovery, rapiddns, rocketreach, securityTrails, sitedossier, subdomaincenter, subdomainfinderc99, threatminer, tomba, urlscan, virustotal, yahoo, zoomeye")
-
-print(table1)
-
-time.sleep(1.5)
-
-## Taules TheHarvester
-
-table2 = Table(title="\nParàmetres prinicpals Enum4linux-ng")
-
-table2.add_column("Opcions", style="Bold yellow")
-table2.add_column("Descripció", style="Bold")
-
-table2.add_row("-h, --help","show this help message and exit")
-table2.add_row("-A","Do all simple enumeration including nmblookup (-U -G -S -P -O -N -I -L). ")
-table2.add_row("-As","Do all simple short enumeration without NetBIOS names lookup (-U -G -S -P -O -I -L)")
-table2.add_row("-U","Get users via RPC")
-table2.add_row("-G","Get groups via RPC")
-table2.add_row("-Gm","Get groups with group members via RPC")
-table2.add_row("-S","Get shares via RPC")
-table2.add_row("-C","Get services via RPC")
-table2.add_row("-P","Get password policy information via RPC")
-table2.add_row("-O","Get OS information via RPC")
-table2.add_row("-L","Get additional domain info via LDAP/LDAPS (for DCs only)")
-table2.add_row("-I","Get printer information via RPC")
-table2.add_row("-R [BULK_SIZE]","Enumerate users via RID cycling. Optionally, specifies lookup request size.")
-table2.add_row("-N","Do an NetBIOS names lookup (similar to nbtstat) and try to retrieve workgroup from output")
-table2.add_row("-w DOMAIN","Specify workgroup/domain manually (usually found automatically)")
-table2.add_row("-u USER","Specify username to use (default "")")
-table2.add_row("-p PW","Specify password to use (default "")")
-table2.add_row("-K TICKET_FILE","Try to authenticate with Kerberos, only useful in Active Directory environment")
-table2.add_row("-H NTHASH","Try to authenticate with hash")
-table2.add_row("--local-auth","Authenticate locally to target")
-table2.add_row("-d","Get detailed information for users and groups, applies to -U, -G and -R")
-table2.add_row("-k USERS","User(s) that exists on remote system (default: administrator,guest,krbtgt,domain admins,root,bin,none). Used to get sid with 'lookupsids'")
-table2.add_row("-r RANGES","RID ranges to enumerate (default: 500-550,1000-1050)")
-table2.add_row("-s SHARES_FILE","Brute force guessing for shares")
-table2.add_row("-t TIMEOUT","Sets connection timeout in seconds (default: 5s)")
-table2.add_row("-v","Verbose, show full samba tools commands being run (net, rpcclient, etc.)")
-table2.add_row("--keep","Don't delete the Samba configuration file created during tool run after enumeration (useful with -v)")
-table2.add_row("-oJ OUT_JSON_FILE","Writes output to JSON file (extension is added automatically)")
-table2.add_row("-oY OUT_YAML_FILE","Writes output to YAML file (extension is added automatically)")
-table2.add_row("-oA OUT_FILE","Writes output to YAML and JSON file (extensions are added automatically)")
-
-print(table2)
-
-time.sleep(3)
-
-print("\n[bold blue] Els resultats de les eines es mostraràn a la finestra un cop hagi finalitzat la execució d'aquest. Si us plau, tingueu paciència\n")
-
-time.sleep(3)
+""")'''
 
 # FUNCIONS
 
@@ -132,48 +58,65 @@ time.sleep(3)
 def exit_boto():
     app.destroy()
 
+## Funció redirigir a pagina de github on hi ha més informació de l'eina
+
+def dirigir_pagina_web():
+    url = "https://github.com/Eloi-Cortiella/PROJECTE"
+    webbrowser.open_new(url)
+
+def dirigir_landing_page():
+    url_landing_page = "https://ericgonzalez41.wixsite.com/e3security"
+    webbrowser.open_new(url_landing_page)
+
 ## Funció nmap
 
 def run_nmap():
-    clear_text()
-    opcion = options_nmap.get()
-    print(opcion)
-    if opcion == "Descobrir hosts de xarxa":
-        target = entry_nmap_ip.get()
-        cmd = ["nmap", "-sn", target]
-    elif opcion == "Escaneig de ports oberts":
-        target = entry_nmap_ip.get()
-        cmd = ["nmap", "-n", "-Pn", "-p-", target]
-    elif opcion == "Llistat de serveis i versions d'un, un rang o tots els ports":
-        target = entry_nmap_ip.get()
-        ports = entry__ports.get()
-        cmd = ["nmap", "-sCV", "-n", "-Pn", "-p", ports, target]
-    elif opcion == "Llistat de vulnerabilitats d'un, un rang o tots els serveis":
-        target = entry_nmap_ip.get()
-        cmd = ["nmap", "--script=vuln", target]
-    else:
-        resultats_text.insert(tk.END, "Opció no vàlida")
-        return
-    
-    executar_commanda(cmd)
+        try:
+                clear_text()
+                opcion = options_nmap.get()
+                if opcion == "Descobrir hosts de xarxa":
+                        target = entry_nmap_ip.get()
+                        cmd = ["nmap", "-sn", target]
+                elif opcion == "Escaneig de ports oberts":
+                        target = entry_nmap_ip.get()
+                        cmd = ["nmap", "-n", "-Pn", "-p-", target]
+                elif opcion == "Llistat de serveis i versions d'un, un rang o tots els ports":
+                        target = entry_nmap_ip.get()
+                        ports = entry__ports.get()
+                        cmd = ["nmap", "-sCV", "-n", "-Pn", "-p", ports, target]
+                elif opcion == "Llistat de vulnerabilitats d'un, un rang o tots els serveis":
+                        target = entry_nmap_ip.get()
+                        cmd = ["nmap", "--script=vuln", target]
+                else:
+                        resultats_text.insert(tk.END, "Opció no vàlida")
+                        return
+                
+                executar_commanda(cmd)
+        except Exception as e:
+                resultats_text.insert(tk.END,"ERROR ----> Hi ha hagut un problema executant el programa... Mira l'arxiu errors.log per veure l'error.")
+                logging.error(f"{temps_actual}Error en executar nmap: {e}")
 
 ## Funció OSINT
 
 def run_osint():
-    clear_text()
-    option = options_osint.get()
+        try:
+                clear_text()
+                option = options_osint.get()
 
-    if option == "Sherlock":
-        username = entry_input_username.get()
-        cmd = ["python3", SHERLOCK_SCRIPT_PATH, "--print-found", username]
-    elif option == "Exiftool":
-        image_path = entry_input_image_path.get()
-        cmd = ["exiftool", image_path]
-    else:
-        resultats_text.insert(tk.END, "Opció no vàlida")
-        return
-    
-    executar_commanda(cmd)
+                if option == "Sherlock":
+                        username = entry_input_username.get()
+                        cmd = ["python3", SHERLOCK_SCRIPT_PATH, "--print-found", username]
+                elif option == "Exiftool":
+                        image_path = entry_input_image_path.get()
+                        cmd = ["exiftool", image_path]
+                else:
+                        resultats_text.insert(tk.END, "Opció no vàlida")
+                        return
+                
+                executar_commanda(cmd)
+        except Exception as e:
+                resultats_text.insert(tk.END,"ERROR ----> Hi ha hagut un problema executant el programa... Mira l'arxiu errors.log per veure l'error.")
+                logging.error(f"{temps_actual}Error en executar OSINT: {e}")
 
 ## Funció buidar text
 
@@ -196,7 +139,7 @@ def update_ip_entry_state(event):
 
 ## Funció que demana a l'usuari el fitxer de la imatge amb la seva ruta
 
-def ask_image_path():
+def ask_image_path(): 
     file_path = filedialog.askopenfilename()
     entry_input_image_path.delete(0, tk.END)
     entry_input_image_path.insert(tk.END, file_path)
@@ -248,7 +191,6 @@ def executar_enum4linux():
     
     except Exception as e:
         resultats_text.insert(tk.END,"ERROR ----> Hi ha hagut un problema executant el programa... Mira l'arxiu errors.log per veure l'error.")
-        print("[bold red]\nERROR ----> Hi ha hagut un problema executant el programa... Mira l'arxiu errors.log per veure l'error.")
         logging.error(f"{temps_actual}Error en executar Enum4linux: {e}")
 
 ## Funcions API Shodan
@@ -295,6 +237,46 @@ def prova_boto():
     if info_ip:
         mostrar_serveis_ports(entry_ip, info_ip['data'])
 
+## Funcions Bot de Telegram
+
+def enviar_missatge_telegram():
+        try:
+                # TOKEN: '6730938053:AAGjxzquj5-M1XMSDibw_JNIzCneTwk3AXc' ID_GRUP: -4093496817 
+                missatge = telegram_entry_missatge.get()
+                idBot = telegram_entry_token.get()
+                idGrupo = telegram_entry_grup.get()
+
+                requests.post('https://api.telegram.org/bot' + idBot + '/sendMessage',
+                data={'chat_id': idGrupo, 'text': missatge, 'parse_mode': 'HTML'})
+                clear_text()
+                resultats_text.insert(tk.END,"Missatge enviat correctament al bot de Telegram, comprova el teu missatge.")
+        except Exception as e:
+                clear_text()
+                resultats_text.insert(tk.END,"ERROR ----> Hi ha hagut un problema executant el programa... Mira l'arxiu errors.log per veure l'error.")
+                logging.error(f"{temps_actual}Error en executar el Bot de Telegram: {e}")
+
+def enviar_document_telegram():
+        try:
+                ruta = telegram_entry_document.get()
+                idGrupo = telegram_entry_grup.get()
+                idBot = telegram_entry_token.get()
+                
+                requests.post('https://api.telegram.org/bot' + idBot + '/sendDocument',
+                files={'document': (ruta, open(ruta, 'rb'))},
+                data={'chat_id': idGrupo, 'caption': 'imagen caption'})
+                clear_text()
+                resultats_text.insert(tk.END,"Document/Imatge enviat correctament al bot de Telegram, comprova el teu document.")
+
+        except Exception as e:
+                clear_text()
+                resultats_text.insert(tk.END,"ERROR ----> Hi ha hagut un problema executant el programa... Mira l'arxiu errors.log per veure l'error.")
+                logging.error(f"{temps_actual}Error en executar el Bot de Telegram: {e}")
+
+def ask_document_path(): 
+    file_path = filedialog.askopenfilename()
+    telegram_entry_document.delete(0, tk.END)
+    telegram_entry_document.insert(tk.END, file_path)
+
 # Imatges
 
 ## Imatge logo Empresa
@@ -316,37 +298,56 @@ framepr.grid(column=1, row=1, pady=10, padx=10, sticky="n")
 ## Frame eines amb les seves configuracions i opcions
 
 frame2 = CTkFrame(app,
-    height=50,
-    width=570
+    height=480,
+    width=615
     )
-frame2.grid(column=0, row=1, pady=10, padx=10, sticky="n")
+frame2.grid(column=0, row=1, pady=10, padx=20, sticky="n")
+
+## Frame per a mostrar a l'usuari els diferents paràmetres de les respectives eines
+
+framepara = CTkFrame(app, 
+    height=400,
+    width=1550
+    )
+framepara.place(x=20, y=600)
 
 # Labels
 
 ## Label Titol
 
 labelpr = CTkLabel(app, 
-    text="PROJECTE E3", 
+    text="E3 SECURITY", 
     font=("Arial", 40), 
-    text_color="white",
+    text_color="yellow",
 )
-labelpr.grid(column=0, row=0, pady=5, sticky="s")
+labelpr.place(x=800, y=15)
 
 ## Label resultats
 
 laberesult = CTkLabel(framepr, 
     text="Resultats", 
+    text_color="green",
     font=("Arial Bold", 25), 
 )
-laberesult.place(x=400, y=5)
+laberesult.place(x=400, y=10)
 
 ## Label checkbox
 
 labelcheckbox = CTkLabel(frame2, 
-    text="Eines", 
-    font=("Arial Bold", 25), 
+    text="Eines",
+    text_color="orange", 
+    font=("Arial Bold", 25) 
 )
-labelcheckbox.place(x=250, y=5)
+labelcheckbox.place(x=280, y=10)
+
+## Label del titol de frame parametres
+
+labelpara = CTkLabel(framepara,
+    text="Funcionament/Paràmetres - Eines",
+    text_color="brown",
+    font=("Arial", 25)
+    )
+labelpara.place(x=620, y=15)
 
 # Botons
 
@@ -367,11 +368,36 @@ logo_boto.grid(column=0, row=0, pady=(5,0), padx=10, sticky="w")
 sortir_boto = CTkButton(app,
     text="Exit/Sortir programa",
     command=exit_boto,
-    font=("Arial Bold", 10), 
-    height=50,
-    width=40      
+    font=("Arial Bold", 20),
+    fg_color="black", 
+    height=100,
+    width=150      
     )
-sortir_boto.grid(column=0, row=1, sticky="s")
+sortir_boto.place(x=1650, y=400)
+
+## Botó per redirigir a pàgina de github al navegador
+
+repositori_boto = CTkButton(app,
+    text="Més informació",
+    command=dirigir_pagina_web,
+    font=("Arial Bold", 20),
+    fg_color="red", 
+    height=100,
+    width=210      
+    )
+repositori_boto.place(x=1650, y=530)
+
+## Botó que redirigeix a la landing page de la nostra empresa
+
+landingpage_boto = CTkButton(app,
+    text="La nostra pàgina",
+    command=dirigir_landing_page,
+    font=("Arial Bold", 20),
+    #fg_color="blue", 
+    height=100,
+    width=210      
+    )
+landingpage_boto.place(x=1650, y=650)
 
 # Textbox
 
@@ -388,15 +414,52 @@ resultats_text.place(x=0, y=50)
 
 ## Tabview de les opcions de les diferents eines
 
-tabviewpr = CTkTabview(app,
+tabviewpr = CTkTabview(frame2,
     height=400,
     width=500
     )
-tabviewpr.grid(column=0,row=1, rowspan=1, padx=5)
+tabviewpr.place(x=10, y=40)
+
+## Tabview dels paràmetres de les eines
+
+tabviewpar = CTkTabview(framepara,
+    height=350,
+    width=1500
+    )
+tabviewpar.place(x=25, y=40)
+
 
 ## Tabs de les diferents eines amb les opcions 
 
 # Api Shodan
+
+## Tabview parametres explicats
+
+tab_shodan_par = tabviewpar.add("Api Shodan")
+
+label_shodan_titol = CTkLabel(tab_shodan_par,
+        text="Motor de recerca de Metadades",
+        text_color="yellow",
+        font=("Arial", 23)
+        ).pack(pady=5)
+
+label_shodan_par1 = CTkLabel(tab_shodan_par,
+        text="Shodan és un motor de recerca de metadades el qual ens ofereix informació segons diversos filtres dels diferents dispositius que es troben a la xarxa. ",
+        font=("Arial", 18)
+        ).pack(pady=5)
+
+label_shodan_par2 = CTkLabel(tab_shodan_par,
+        text="Funcionament",
+        text_color="orange",
+        font=("Arial", 23)
+        ).pack(pady=5)
+
+label_shodan_par3 = CTkLabel(tab_shodan_par,
+        text="Introdueix la IP que vulguis buscar i fes click al botó d'executar shodan, és mostrarà el resultat al cap d'uns segons",
+        font=("Arial", 18)
+        ).pack(pady=5)
+
+## Tabview opcions
 
 tab_shodan = tabviewpr.add("Api Shodan")
 
@@ -416,6 +479,34 @@ run_api_shodan_boto = CTkButton(tab_shodan,
 
 
 # Més OSINT
+
+## Tabview explicació eina OSINT
+
+tab_osint_par = tabviewpar.add("Més OSINT")
+
+label_OSINT_titol = CTkLabel(tab_osint_par,
+        text="Recopilar i analitzar informació de fonts d'accés públic",
+        text_color="yellow",
+        font=("Arial", 23)
+        ).pack(pady=5)
+
+label_osint_par1 = CTkLabel(tab_osint_par,
+        text="La finalitat de l'OSINT és obtenir dades rellevants i útils per comprendre millor una situació, entitat o individu.\n\nLa informació recopilada mitjançant l'OSINT es pot utilitzar en diverses àrees (Seguretat, investigació, intel·ligència...)",
+        font=("Arial", 18)
+        ).pack(pady=5)
+
+label_osint_par2 = CTkLabel(tab_osint_par,
+        text="Funcionament",
+        text_color="orange",
+        font=("Arial", 23)
+        ).pack(pady=5)
+
+label_osint_par3 = CTkLabel(tab_osint_par,
+        text="La finalitat de l'OSINT és obtenir dades rellevants i útils per comprendre millor una situació, entitat o individu.\n\nLa informació recopilada mitjançant l'OSINT es pot utilitzar en diverses àrees (Seguretat, investigació, intel·ligència...)",
+        font=("Arial", 18)
+        ).pack(pady=5)
+
+## Tabview opcions eina OSINT
 
 tab_osint = tabviewpr.add("Més OSINT")
 
@@ -465,6 +556,35 @@ run_osint_boto = CTkButton(tab_osint,
 
 # TheHarvester
 
+tab_the_harvester_par = tabviewpar.add("The Harvester")
+
+label_harvester_par_titol = CTkLabel(tab_the_harvester_par,
+        text="Paràmetres principals",
+        text_color="yellow",
+        font=("Arial", 24)
+        ).pack(pady=5)
+
+text_parametres_harvester = """· -h, --help --> Show help message and exit.                                                                                     ·-c, --dns-brute --> Perform a DNS brute force on the domain. 
+· -d DOMAIN, --domain DOMAIN --> Company name or domain to search.                                        ·-f FILENAME, --filename FILENAME --> Save the results to an XML and JSON file.
+· -l LIMIT, --limit LIMIT --> Limit the number of search results, default=500.                                       ·-b SOURCE, --source SOURCE --> Fonts d'origen.
+· -S START, --start START --> Start with result number X, default=0.
+· -p, --proxies --> Use proxies for requests, enter proxies in proxies.yaml.
+· -s, --shodan --> Use Shodan to query discovered hosts.
+· --screenshot SCREENSHOT --> Take screenshots of resolved domains specify output directory.
+· -v, --virtual-host --> Verify host name via DNS resolution and search for virtual hosts.
+· -e NDS_SERVER, --dns-server DNS_SERVER --> DNS server to use for lookup.
+· -t, --take-over --> Check for takeovers.
+· -r [DNS_RESOLVE] --> Perform DNS resolution on subdomains with a resolver list.
+· -n, --dns-lookup --> Enable DNS server lookup, default False."""
+
+label_harvester_par1 = CTkLabel(tab_the_harvester_par,
+        text=text_parametres_harvester,
+        font=("Arial", 17),
+        justify="left"
+        ).pack(pady=5, anchor="w")
+
+## Tabview opcions 
+
 tab_the_harvester = tabviewpr.add("The Harvester")
 
 the_harvester_label_target = CTkLabel(tab_the_harvester,
@@ -493,11 +613,77 @@ run_the_harvester_boto = CTkButton(tab_the_harvester, text="Executar The Harvest
 
 tab_auditoria = tabviewpr.add("Auditoria SSH")
 
+tab_auditoria_par = tabviewpar.add("Auditoria SSH")
+
 # Enumeració(Enum4linux)
+
+## Tabview explicació paràmetres enum4linux 
+
+tab_enumeracio_par = tabviewpar.add("Enumeracio")
+
+tabview_enumeracio_par = CTkTabview(tab_enumeracio_par,
+    height=310,
+    width=1500
+    )
+tabview_enumeracio_par.place(x=0, y=0)
+
+tab_enumeracio_par1 = tabview_enumeracio_par.add("1")
+
+enum4linux_label_par1 = CTkLabel(tab_enumeracio_par1, 
+        text="""· -h, --help","show this help message and exit")
+· -A --> Do all simple enumeration including nmblookup (-U -G -S -P -O -N -I -L). ")
+· -As --> Do all simple short enumeration without NetBIOS names lookup (-U -G -S -P -O -I -L)")
+· -U --> Get users via RPC")
+· -G --> Get groups via RPC")
+· -Gm --> Get groups with group members via RPC")
+· -S --> Get shares via RPC")
+· -C --> Get services via RPC")
+· -P --> Get password policy information via RPC")
+· -O --> Get OS information via RPC")
+· -L --> Get additional domain info via LDAP/LDAPS (for DCs only)")
+· -I --> Get printer information via RPC")
+· -R [BULK_SIZE] --> Enumerate users via RID cycling. Optionally, specifies lookup request size.")""",
+        font=("Arial", 17),
+        justify="left"
+        ).pack()
+
+tab_enumeracio_par2 = tabview_enumeracio_par.add("2")
+
+enum4linux_label_par2 = CTkLabel(tab_enumeracio_par2, 
+        text="""· -N --> Do an NetBIOS names lookup (similar to nbtstat) and try to retrieve workgroup from output")
+· -w DOMAIN --> Specify workgroup/domain manually (usually found automatically)")
+· -u USER --> Specify username to use (default "")")
+· -p PW --> Specify password to use (default "")")
+· -K TICKET_FILE --> Try to authenticate with Kerberos, only useful in Active Directory environment")
+· -H NTHASH --> Try to authenticate with hash")
+· --local-auth --> Authenticate locally to target")
+· -d --> Get detailed information for users and groups, applies to -U, -G and -R")
+· -k USERS --> User(s) that exists on remote system (default: administrator,guest,krbtgt,domain admins,root,bin,none). Used to get sid with 'lookupsids'")
+· -r RANGES --> RID ranges to enumerate (default: 500-550,1000-1050)")
+· -s SHARES_FILE --> Brute force guessing for shares")
+· -t TIMEOUT --> Sets connection timeout in seconds (default: 5s)")""",
+        font=("Arial", 17),
+        justify="left"
+        ).pack(pady=5)
+
+tab_enumeracio_par3 = tabview_enumeracio_par.add("3")
+
+enum4linux_label_par3 = CTkLabel(tab_enumeracio_par3, 
+        text="""· -v --> Verbose, show full samba tools commands being run (net, rpcclient, etc.)")
+· --keep --> Don't delete the Samba configuration file created during tool run after enumeration (useful with -v)")
+· -oJ OUT_JSON_FILE --> Writes output to JSON file (extension is added automatically)")
+· -oY OUT_YAML_FILE --> Writes output to YAML file (extension is added automatically)")
+· -oA OUT_FILE --> Writes output to YAML and JSON file (extensions are added automatically)")""",
+        font=("Arial", 17),
+        justify="left"
+        ).pack(pady=5)
+
+
+## Tabview enumeració 
 
 tab_enumeracio = tabviewpr.add("Enumeracio")
 
-eum4linux_label_target = CTkLabel(tab_enumeracio, 
+enum4linux_label_target = CTkLabel(tab_enumeracio, 
         text="Introdueix la ip del objectiu:",
         font=("Arial", 15)
         ).pack(pady=5)
@@ -523,12 +709,15 @@ run_enum4linux_boto = CTkButton(tab_enumeracio, text="Executar Enum4linux",
 
 tab_telegram = tabviewpr.add("Bot Telegram")
 
+tab_telegram_par = tabviewpar.add("Bot Telegram")
+
 telgram_label_token = CTkLabel(tab_telegram, 
         text = "Coloca aqui el token del teu bot:",
         font=("Arial", 15)
         ).pack(pady=5)
 
 telegram_entry_token = Entry(tab_telegram,
+        width=50   
         )
 telegram_entry_token.pack(pady=5)
 
@@ -538,17 +727,76 @@ telgram_label_grup = CTkLabel(tab_telegram,
         ).pack(pady=5)
 
 telegram_entry_grup = Entry(tab_telegram,
+        width=40
         )
-
 telegram_entry_grup.pack(pady=5)
 
-run_telegram_boto = CTkButton(tab_telegram,
-    text="Executar Bot Telegram"
+telgram_label_missatge = CTkLabel(tab_telegram,
+        text="Coloca aqui el missatge que vols enviar",
+        font=("Arial", 15)
+        ).pack(pady=5)
+
+telegram_entry_missatge = Entry(tab_telegram,
+        width=50
+        )
+telegram_entry_missatge.pack(pady=5)
+
+telgram_label_document = CTkLabel(tab_telegram,
+        text="Coloca aqui el document que vols enviar",
+        font=("Arial", 15)
+        ).pack(pady=5)
+
+telegram_entry_document = Entry(tab_telegram,
+        width=50
+        )
+telegram_entry_document.pack(pady=5)
+
+run_telegram_missatge_boto = CTkButton(tab_telegram,
+    text="Selecciona el document/imatge",
+    command=ask_document_path
+    ).pack(pady=5)
+
+run_telegram_missatge_boto = CTkButton(tab_telegram,
+    text="Enviar missatge a bot telegram",
+    command=enviar_missatge_telegram
+    ).pack(pady=5)
+
+run_telegram_document_boto = CTkButton(tab_telegram,
+    text="Enviar document a bot telegram",
+    command=enviar_document_telegram
     ).pack(pady=5)
 
 # Escaneig NMAP
 
 tab_escaneig = tabviewpr.add("Escaneig")
+
+## Parametres escaneig al TabView
+
+tab_escaneig_par = tabviewpar.add("Escaneig")
+
+label_nmap_par_titol = CTkLabel(tab_escaneig_par,
+        text="Eina de seguretat informàtica i exploració de xarxes",
+        text_color="yellow", 
+        font=("Arial", 22)
+        ).pack(pady=10, padx=5)
+
+label_nmap_par = CTkLabel(tab_escaneig_par,
+        text="Permet als usuaris descobrir i analitzar dispositius a una xarxa, identificar els serveis\nque estan en execució en aquests dispositius i determinar les vulnerabilitats potencials.",
+        font=("Arial", 18)
+        ).pack(pady=10, padx=5)
+
+label_nmap_par2 = CTkLabel(tab_escaneig_par,
+        text="\nOpcions disponibles",
+        text_color="orange",
+        font=("Arial", 25)
+        ).pack(padx=10)
+
+label_nmap_par3 = CTkLabel(tab_escaneig_par,
+        text="1. Descobrir hosts de xarxa: permet descobrir els hosts actius en una xarxa sense realitzar un escaneig de ports.\n 2. Escaneig de ports oberts: escaneja els ports d'un host o d'una xarxa per determinar quins ports estan oberts i disponibles.\n 3. Llistat de serveis i versions d'un, un rang o tots els ports: realitza un escaneig de versions per identificar els serveis que s'estan executant als ports oberts.\n 4. Llistat de vulnerabilitats d'un, un rang o tots els ports: utilitza scripts de Nmap per identificar possibles vulnerabilitats als serveis detectats.",
+        font=("Arial", 18),
+        ).pack(padx=10)
+
+## Opcions escaneig
 
 label_nmap = CTkLabel(tab_escaneig, 
     text="Selecciona una opció de NMAP",
